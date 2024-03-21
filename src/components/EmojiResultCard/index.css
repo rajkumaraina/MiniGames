@@ -1,0 +1,74 @@
+.ResultContainer {
+  width: 35%;
+  height: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
+  padding: 12px;
+  border: 2px solid #ffffff30;
+  background-color: #ffffff33;
+}
+@media (max-width: 576px) {
+  .ResultContainer {
+    width: 80%;
+    border-radius: 22px;
+    flex-direction: column;
+    padding: 0;
+    margin-top: 0;
+  }
+  .result {
+    order: 1;
+  }
+  .resultImg {
+    order: 0;
+    margin-top: 22px;
+  }
+  .resultPara {
+    margin: 8px;
+    font-size: 12px;
+  }
+  .resultPara1 {
+    margin: 0;
+  }
+  .playAgainButton {
+    margin-top: 15px;
+  }
+}
+.result {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 18px;
+}
+.resultHeading {
+  color: #ffffff;
+  font-size: 35px;
+}
+.resultPara {
+  color: #ffffff;
+  font-size: 30px;
+  font-weight: 500;
+  margin: 0;
+}
+.resultPara1 {
+  color: #6a59ff;
+  font-size: 30px;
+  font-weight: bold;
+}
+.playAgainButton {
+  background-color: #ffce27;
+  color: #000000;
+  outline: none;
+  font-weight: bold;
+  cursor: pointer;
+  border: 0 none;
+  height: 45px;
+  width: 100px;
+  border-radius: 15px;
+}
+.resultImg {
+  width: 205px;
+  height: 255px;
+}
