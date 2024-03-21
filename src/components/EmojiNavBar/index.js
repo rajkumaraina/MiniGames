@@ -5,7 +5,7 @@ const WinNavbarItem = () => (
     <div className="insideNavBarContainer">
       <div className="navbarInsideContainer">
         <img
-          src="https://assets.ccbp.in/frontend/react-js/game-logo-img.png"
+          src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711020459/wink_1_lnyiyp.png"
           alt="emoji logo"
           className="logoImg"
         />
@@ -23,7 +23,7 @@ const LooseNavbarItem = props => {
       <div className="insideNavBarContainer">
         <div className="navbarInsideContainer">
           <img
-            src="https://assets.ccbp.in/frontend/react-js/game-logo-img.png"
+            src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711020459/wink_1_lnyiyp.png"
             alt="emoji logo"
             className="logoImg"
           />

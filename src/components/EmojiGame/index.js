@@ -100,6 +100,11 @@ class EmojiGame extends Component {
     })
   }
 
+  BackButtonClicked = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
   emojiClicked = id => {
     const {
       emojisList,
@@ -192,6 +197,19 @@ class EmojiGame extends Component {
     return (
       <div className="MainContainer">
         {NavbarToDisplay}
+        <div className="EmojiHomeBack">
+          <div className="EmojiBackIconContainer">
+            <button className="BackButton" onClick={this.BackButtonClicked}>
+              <img
+                src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711019747/arrow-left_p58uae.svg"
+                className="BackIcon"
+              />
+              <p className="backpara">Back</p>
+            </button>
+            <h1>Rules</h1>
+          </div>
+        </div>
+
         <div className="rContainer">{resultCard}</div>
       </div>
     )
