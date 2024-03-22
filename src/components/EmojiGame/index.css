@@ -1,4 +1,4 @@
-.MainContainer {
+.EmojiGameMainContainer {
   background-image: linear-gradient(#9796f0, #fbc7d4);
   height: 100%;
 }
@@ -69,11 +69,23 @@
   text-align: center;
   margin: 0;
   font-size: 22px;
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
 }
 .rulesListItem {
   list-style-type: disc;
   font-size: 15px;
   margin: 8px;
+  font-family: Roboto;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+}
+.popup-content {
+  border-radius: 8px;
 }
 @media (max-width: 576px) {
   .cardsContainer {

@@ -6,7 +6,7 @@ const HomePage = () => (
   <div className="HomePageMainContainer">
     <h1 className="HomeHeading">Games</h1>
     <ul className="HomePageGamesUnorderedList">
-      <Link to="/EmojiGame" className="HomePageLinkElement">
+      <Link to="/EmojiRules" className="HomePageLinkElement">
         <li className="HomePageListItem">
           <img
             src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711016435/Asset_1_4x_1_zy1lyd.jpg"

@@ -50,3 +50,15 @@
   width: 280px;
   height: 160px;
 }
+@media (max-width: 576px) {
+  .HomePageGamesUnorderedList {
+    flex-direction: column;
+  }
+  .HomePageLinkElement {
+    width: 85%;
+  }
+  .HomePageMainContainer {
+    height: 100%;
+    padding-bottom: 8px;
+  }
+}

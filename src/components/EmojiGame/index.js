@@ -14,10 +14,6 @@ import './index.css'
 
 import EachEmojiCard from '../EmojiCard'
 
-const overlayStyles = {
-  backgroundColor: '#ffff',
-}
-
 const initialEmojisList = [
   {
     id: 0,
@@ -205,7 +201,7 @@ class EmojiGame extends Component {
       )
     }
     return (
-      <div className="MainContainer">
+      <div className="EmojiGameMainContainer">
         {NavbarToDisplay}
         <div className="EmojiHomeBack">
           <div className="EmojiBackIconContainer">
@@ -253,6 +249,23 @@ class EmojiGame extends Component {
                           time, then the count of the score should be
                           incremented by 1 and the List of emoji cards should be
                           shuffled.
+                        </li>
+                        <li className="rulesListItem">
+                          This process should be repeated every time the user
+                          clicks on an emoji card
+                        </li>
+                        <li className="rulesListItem">
+                          When the user clicks on all Emoji cards without
+                          clicking any of it twice, then the user will win the
+                          game
+                        </li>
+                        <li className="rulesListItem">
+                          When the user clicks on the same Emoji for the second
+                          time, then the user will lose the game.
+                        </li>
+                        <li className="rulesListItem">
+                          Once the game is over, the user will be redirected to
+                          the results page.
                         </li>
                       </ul>
                     </div>

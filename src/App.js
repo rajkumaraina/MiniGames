@@ -2,6 +2,8 @@ import {Route, Switch} from 'react-router-dom'
 
 import HomePage from './components/HomePage'
 
+import EmojiRules from './components/EmojiRules'
+
 import EmojiGame from './components/EmojiGame'
 
 import './App.css'
@@ -152,6 +154,7 @@ const cardsData = [
 const App = () => (
   <Switch>
     <Route exact path="/" component={HomePage} />
+    <Route exact path="/EmojiRules" component={EmojiRules} />
     <Route exact path="/EmojiGame" component={EmojiGame} />
   </Switch>
 )

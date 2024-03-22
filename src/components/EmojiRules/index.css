@@ -1,0 +1,67 @@
+.EmojiRulesMainContainer {
+  background-image: linear-gradient(#9796f0, #fbc7d4);
+  height: 100%;
+  padding-bottom: 18px;
+}
+.rulesBackWidth {
+  width: 85%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0;
+}
+.initialRules {
+  display: flex;
+  justify-content: center;
+}
+.InitialRulesContainer {
+  border: 3px solid rgba(255, 255, 255, 0.19);
+  background: rgba(255, 255, 255, 0.2);
+  width: 85%;
+  border-radius: 8px;
+  display: flex;
+  padding: 20px;
+}
+.InitialRulesFirstContainer {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.InitialEmojiRulesImage {
+  width: 350px;
+  height: 400px;
+}
+.InitialRulesSecondContainer {
+  width: 60%;
+}
+.InitialRulesHeading {
+  font-family: Roboto;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+  text-align: center;
+}
+.InitialrulesListItem {
+  list-style-type: disc;
+  font-size: 15px;
+  margin: 8px;
+  font-family: Roboto;
+  font-weight: 500;
+  line-height: 32px;
+  text-align: left;
+  color: rgba(71, 85, 105, 1);
+}
+.EmojiStartPlayingButton {
+  background-color: rgba(51, 65, 85, 1);
+  color: White;
+  padding: 8px;
+  border: 0 none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+}
+.InitialRulesPlayContainer {
+  text-align: center;
+}
