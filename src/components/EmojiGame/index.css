@@ -1,6 +1,6 @@
 .MainContainer {
   background-image: linear-gradient(#9796f0, #fbc7d4);
-  height: 100vh;
+  height: 100%;
 }
 .rContainer {
   display: flex;
@@ -16,7 +16,18 @@
 .EmojiBackIconContainer {
   display: flex;
   justify-content: space-between;
-  width: 65%;
+  align-items: center;
+  width: 55%;
+  margin: 0;
+}
+.trigger-button {
+  background-color: transparent;
+  border: 2px solid black;
+  width: 62px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
 }
 .BackButton {
   background-color: transparent;
@@ -30,6 +41,7 @@
 .EmojiHomeBack {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .BackIcon {
   width: 35px;
@@ -41,6 +53,27 @@
   font-weight: 500;
   line-height: 32px;
   text-align: left;
+}
+.closeContainer {
+  text-align: right;
+}
+.closeButton {
+  background-color: transparent;
+  border: 0 none;
+  cursor: pointer;
+  outline: none;
+  font-size: 20px;
+}
+.rulesHeading {
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  font-size: 22px;
+}
+.rulesListItem {
+  list-style-type: disc;
+  font-size: 15px;
+  margin: 8px;
 }
 @media (max-width: 576px) {
   .cardsContainer {

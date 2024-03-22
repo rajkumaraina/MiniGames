@@ -1,5 +1,11 @@
 import {Component} from 'react'
 
+import Popup from 'reactjs-popup'
+
+import 'reactjs-popup/dist/index.css'
+
+import {MdClose} from 'react-icons/md'
+
 import {WinNavbarItem, LooseNavbarItem} from '../EmojiNavBar'
 
 import {Win, Loose} from '../EmojiResultCard'
@@ -7,6 +13,10 @@ import {Win, Loose} from '../EmojiResultCard'
 import './index.css'
 
 import EachEmojiCard from '../EmojiCard'
+
+const overlayStyles = {
+  backgroundColor: '#ffff',
+}
 
 const initialEmojisList = [
   {
@@ -199,14 +209,57 @@ class EmojiGame extends Component {
         {NavbarToDisplay}
         <div className="EmojiHomeBack">
           <div className="EmojiBackIconContainer">
-            <button className="BackButton" onClick={this.BackButtonClicked}>
+            <button
+              className="BackButton"
+              onClick={this.BackButtonClicked}
+              type="button"
+            >
               <img
                 src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711019747/arrow-left_p58uae.svg"
                 className="BackIcon"
+                alt="backIcon"
               />
               <p className="backpara">Back</p>
             </button>
-            <h1>Rules</h1>
+            <div className="popup-container">
+              <Popup
+                modal
+                trigger={
+                  <button type="button" className="trigger-button">
+                    Rules
+                  </button>
+                }
+              >
+                {close => (
+                  <>
+                    <div>
+                      <div className="closeContainer">
+                        <button
+                          type="button"
+                          className="closeButton"
+                          onClick={() => close()}
+                        >
+                          {' '}
+                          <MdClose />
+                        </button>
+                      </div>
+                      <h1 className="rulesHeading">Rules</h1>
+                      <ul className="rulesUnorderedList">
+                        <li className="rulesListItem">
+                          User should able to see the lists of Emojis
+                        </li>
+                        <li className="rulesListItem">
+                          When the user clicks any of the Emoji for the first
+                          time, then the count of the score should be
+                          incremented by 1 and the List of emoji cards should be
+                          shuffled.
+                        </li>
+                      </ul>
+                    </div>
+                  </>
+                )}
+              </Popup>
+            </div>
           </div>
         </div>
 
