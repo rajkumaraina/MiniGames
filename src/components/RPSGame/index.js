@@ -82,6 +82,11 @@ class RPSGame extends Component {
     selected: choicesList[0],
   }
 
+  BackButtonClicked = () => {
+    const {history} = this.props
+    history.replace('/')
+  }
+
   clicked = id => {
     const {score} = this.state
     const selectedItem = choicesList.find(each => each.id === id)
@@ -90,20 +95,27 @@ class RPSGame extends Component {
     const randomItem = choicesList[r]
     console.log(selectedItem.id)
     console.log(randomItem.id)
-    let result
+    let result = 'INITIAL'
     let newScore
+    let emojiUrl
     if (id === 'ROCK') {
       switch (randomItem.id) {
         case 'PAPER':
           result = 'YOU LOSE'
           newScore = score - 1
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_2_rrrfqy.png'
           break
         case 'SCISSORS':
           result = 'YOU WON'
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_zx2jkn.png'
           newScore = score + 1
           break
         default:
           result = 'IT IS DRAW'
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_1_dop4bq.png'
           newScore = score
           break
       }
@@ -113,13 +125,19 @@ class RPSGame extends Component {
         case 'ROCK':
           result = 'YOU WON'
           newScore = score + 1
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_zx2jkn.png'
           break
         case 'SCISSORS':
           result = 'YOU LOSE'
           newScore = score - 1
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_2_rrrfqy.png'
           break
         default:
           result = 'IT IS DRAW'
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_1_dop4bq.png'
           newScore = score
           break
       }
@@ -128,14 +146,20 @@ class RPSGame extends Component {
       switch (randomItem.id) {
         case 'PAPER':
           result = 'YOU WON'
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_zx2jkn.png'
           newScore = score + 1
           break
         case 'ROCK':
           result = 'YOU LOSE'
           newScore = score - 1
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_2_rrrfqy.png'
           break
         default:
           result = 'IT IS DRAW'
+          emojiUrl =
+            'https://res.cloudinary.com/dktgcdgar/image/upload/v1711204486/Emoji_1_dop4bq.png'
           newScore = score
           break
       }
@@ -145,6 +169,7 @@ class RPSGame extends Component {
       random: randomItem,
       selected: selectedItem,
       result,
+      emojiUrl,
       score: newScore,
     })
   }
@@ -154,7 +179,35 @@ class RPSGame extends Component {
   }
 
   render() {
-    const {itemClicked, score, random, selected, result} = this.state
+    const {itemClicked, score, random, selected, result, emojiUrl} = this.state
+    let ScoreEmoji
+    if (result === 'YOU WON') {
+      ScoreEmoji = (
+        <img
+          src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711203969/Group_7618_narfpl.png"
+          alt="emoji"
+        />
+      )
+    } else if (result === 'YOU LOSE') {
+      ScoreEmoji = (
+        <img
+          src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711203969/Group_7618_1_uyj3zc.png"
+          alt="emoji"
+        />
+      )
+    } else if (result === 'IT IS DRAW') {
+      ScoreEmoji = (
+        <img
+          src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711205747/Group_7618_2_nd29qg.png"
+          alt="emoji"
+        />
+      )
+    } else {
+      ScoreEmoji = (
+        <img src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711020459/wink_1_lnyiyp.png" />
+      )
+    }
+
     return (
       <Container>
         <div className="EmojiHomeBack">
@@ -295,6 +348,7 @@ class RPSGame extends Component {
           <div>
             <Heading>Rock Paper Scissors</Heading>
           </div>
+          {ScoreEmoji}
           <ScoreValueContainer>
             <ScorePara inside>Score</ScorePara>
             <Score>{score}</Score>
@@ -305,6 +359,7 @@ class RPSGame extends Component {
             selected={selected}
             random={random}
             result={result}
+            emojiUrl={emojiUrl}
             playAgain={this.playAgain}
           />
         ) : (

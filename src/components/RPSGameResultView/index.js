@@ -9,7 +9,7 @@ import {
 } from '../RPSGame/styledComponents'
 
 const RPSGameResultView = props => {
-  const {selected, random, result, playAgain} = props
+  const {selected, random, result, playAgain, emojiUrl} = props
   const play = () => {
     playAgain()
   }
@@ -24,6 +24,7 @@ const RPSGameResultView = props => {
         <ImageElement src={random.imageUrl} clicked alt="opponent choice" />
       </OneItem>
       <ResultContainer>
+        <img src={emojiUrl} alt="emoji" />
         <ResultPara>{result}</ResultPara>
         <PlayAgainButton onClick={play} type="button">
           PLAY AGAIN
