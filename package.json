@@ -13,6 +13,7 @@
     "@wojtekmaj/enzyme-adapter-react-17": "0.6.5",
     "chalk": "4.1.0",
     "enzyme": "3.11.0",
+    "global": "4.4.0",
     "history": "5.0.1",
     "rc-progress": "3.1.4",
     "react": "17.0.1",
@@ -20,7 +21,8 @@
     "react-icons": "4.3.1",
     "react-modal": "3.14.3",
     "react-router-dom": "5.3.0",
-    "reactjs-popup": "2.0.6"
+    "reactjs-popup": "2.0.6",
+    "styled-components": "6.1.8"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",

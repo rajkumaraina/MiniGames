@@ -16,7 +16,7 @@ const HomePage = () => (
           <p className="GameName">Emoji Game</p>
         </li>
       </Link>
-      <Link to="/MemoryMatrix" className="HomePageLinkElement">
+      <Link to="/MemoryMatrixRules" className="HomePageLinkElement">
         <li className="HomePageListItem">
           <p className="GameName">Memory Matrix</p>
           <img
@@ -26,7 +26,7 @@ const HomePage = () => (
           />
         </li>
       </Link>
-      <Link to="/RockPaperScissor" className="HomePageLinkElement">
+      <Link to="/RockPaperScissorRules" className="HomePageLinkElement">
         <li className="HomePageListItem">
           <p className="GameName">Rock Paper Scissor</p>
           <img
@@ -36,7 +36,7 @@ const HomePage = () => (
           />
         </li>
       </Link>
-      <Link to="/CardFlip" className="HomePageLinkElement">
+      <Link to="/CardFlipRules" className="HomePageLinkElement">
         <li className="HomePageListItem">
           <img
             src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711017354/animals_xqlxwn.jpg"

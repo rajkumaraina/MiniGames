@@ -1,0 +1,70 @@
+.RPSRulesMainContainer {
+  background: rgba(34, 58, 95, 1);
+  height: 100%;
+  padding-bottom: 20px;
+}
+.white {
+  color: #ffffff;
+}
+.RPSRulesHeading {
+  font-family: Bree Serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.RPSRulesImage {
+  width: 266px;
+  height: 237px;
+  margin: 8px;
+}
+.RPSRulesTopContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.RPSRulesName {
+  font-family: Bree Serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: left;
+  margin-left: 105px;
+}
+.RpsUnorderedList {
+  padding: 0px;
+  margin-left: 125px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.RpsListItem {
+  margin: 18px;
+  font-family: Bree Serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  text-align: left;
+  color: white;
+  width: 45%;
+}
+
+.RpsSpanElement {
+  color: yellow;
+}
+.RpsPlayButton {
+  background-color: white;
+  color: rgba(34, 58, 95, 1);
+  padding: 12px;
+  border: 0 none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 8px;
+  margin-left: 105px;
+  font-family: Bree Serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
