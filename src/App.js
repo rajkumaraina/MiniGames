@@ -10,6 +10,8 @@ import RPSRules from './components/RPS_Rules'
 
 import RPSGame from './components/RPSGame'
 
+import MatrixGame from './components/MemoryMatrixGame'
+
 import './App.css'
 
 const emojisList = [
@@ -162,6 +164,7 @@ const App = () => (
     <Route exact path="/EmojiGame" component={EmojiGame} />
     <Route exact path="/RockPaperScissorRules" component={RPSRules} />
     <Route exact path="/RockPaperScissor" component={RPSGame} />
+    <Route exact path="/MemoryMatrix" component={MatrixGame} />
   </Switch>
 )
 

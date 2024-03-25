@@ -1,0 +1,49 @@
+.MMGameMainContainer {
+  background: rgba(26, 32, 44, 1);
+  height: 100vh;
+}
+.MMGameHeading {
+  font-family: Bree Serif;
+  font-size: 44px;
+  font-weight: 400;
+  line-height: 20px;
+  text-align: center;
+  color: #ffffff;
+}
+.MMLevelContainer {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.MMLevel {
+  font-family: Bree Serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.59px;
+  text-align: center;
+  color: #ffffff;
+}
+.MMUnorderedBox-level1 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 245px;
+}
+.MMListItemBox {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 70px;
+  height: 70px;
+  margin: 5px;
+}
+.Active {
+  background: rgba(70, 122, 255, 1);
+}
+.MMBoxButton {
+  background-color: transparent;
+  border: 0 none;
+  outline: none;
+  cursor: pointer;
+}
