@@ -37,7 +37,7 @@ const EmojiRules = props => {
           </div>
           <div className="InitialRulesSecondContainer">
             <h1 className="InitialRulesHeading">Rules</h1>
-            <ul>
+            <ul className="emojigameUnorderedList">
               <li className="InitialrulesListItem">
                 User should able to see the lists of Emojis
               </li>

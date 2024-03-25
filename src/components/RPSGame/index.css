@@ -110,9 +110,32 @@
   justify-content: center;
   align-items: center;
 }
+.rpsScoreContainerEmojiAndScore {
+  display: flex;
+  width: 55%;
+  justify-content: space-between;
+  align-items: center;
+}
+.rpsResultEmoji {
+  width: 100px;
+  height: 100px;
+}
 @media (max-width: 576px) {
   .UnorderedList {
     width: 100%;
     padding: 0;
+  }
+  .rpsResultEmoji {
+    width: 130px;
+    height: 130px;
+    margin-left: 28px;
+  }
+  .rpsScoreContainerEmojiAndScore {
+    width: 100%;
+  }
+  .RpsUnorderedList {
+    overflow-y: auto;
+    height: 80vh;
+    margin-top: 0;
   }
 }

@@ -186,6 +186,7 @@ class RPSGame extends Component {
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711203969/Group_7618_narfpl.png"
           alt="emoji"
+          className="rpsResultEmoji"
         />
       )
     } else if (result === 'YOU LOSE') {
@@ -193,6 +194,7 @@ class RPSGame extends Component {
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711203969/Group_7618_1_uyj3zc.png"
           alt="emoji"
+          className="rpsResultEmoji"
         />
       )
     } else if (result === 'IT IS DRAW') {
@@ -200,11 +202,16 @@ class RPSGame extends Component {
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711205747/Group_7618_2_nd29qg.png"
           alt="emoji"
+          className="rpsResultEmoji"
         />
       )
     } else {
       ScoreEmoji = (
-        <img src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711020459/wink_1_lnyiyp.png" />
+        <img
+          src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711020459/wink_1_lnyiyp.png"
+          className="rpsResultEmoji"
+          alt="emoji"
+        />
       )
     }
 
@@ -235,7 +242,7 @@ class RPSGame extends Component {
               >
                 {close => (
                   <>
-                    <div>
+                    <div className="rpsRulesScrollContainer">
                       <div className="closeContainer">
                         <button
                           type="button"
@@ -348,11 +355,13 @@ class RPSGame extends Component {
           <div>
             <Heading>Rock Paper Scissors</Heading>
           </div>
-          {ScoreEmoji}
-          <ScoreValueContainer>
-            <ScorePara inside>Score</ScorePara>
-            <Score>{score}</Score>
-          </ScoreValueContainer>
+          <div className="rpsScoreContainerEmojiAndScore">
+            {ScoreEmoji}
+            <ScoreValueContainer>
+              <ScorePara inside>Score</ScorePara>
+              <Score>{score}</Score>
+            </ScoreValueContainer>
+          </div>
         </ScoreContainer>
         {itemClicked ? (
           <GameResultView

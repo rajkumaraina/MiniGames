@@ -65,3 +65,27 @@
 .InitialRulesPlayContainer {
   text-align: center;
 }
+@media (max-width: 576px) {
+  .InitialRulesContainer {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .InitialRulesSecondContainer {
+    width: 100%;
+  }
+  .InitialEmojiRulesImage {
+    width: 250px;
+    height: 250px;
+  }
+  .emojigameUnorderedList {
+    padding: 0;
+  }
+  .InitialRulesHeading {
+    font-size: 22px;
+  }
+  .EmojiHomeBack {
+    width: 90%;
+    margin-left: 20px;
+  }
+}

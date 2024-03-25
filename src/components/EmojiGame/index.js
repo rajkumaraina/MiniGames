@@ -177,7 +177,7 @@ class EmojiGame extends Component {
       }
     } else {
       resultCard = (
-        <div className="cardsContainer">
+        <div className="cardsContainer-emoji">
           <ul className="UnorderedList">
             {emojisList.map(eachItem => (
               <EachEmojiCard
@@ -221,7 +221,7 @@ class EmojiGame extends Component {
               <Popup
                 modal
                 trigger={
-                  <button type="button" className="trigger-button">
+                  <button type="button" className="trigger-button-emoji">
                     Rules
                   </button>
                 }

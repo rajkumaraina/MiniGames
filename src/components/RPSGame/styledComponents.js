@@ -1,13 +1,17 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-  height: 100%;
+  height: 100vh;
   background-color: #223a5f;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  @media (max-width: 576px) {
+    height: 100vh;
+    justify-content: flex-start;
+  }
 `
 export const ScoreContainer = styled.div`
   border: 1px solid #ffffff;
@@ -17,6 +21,12 @@ export const ScoreContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   border-radius: 5px;
+  @media (max-width: 576px) {
+    margin-top: 50px;
+    margin-bottom: 120px;
+    height: 250px;
+    flex-direction: column;
+  }
 `
 export const ScorePara = styled.p`
   font-family: 'Bree Serif';
@@ -52,9 +62,9 @@ export const PlayingView = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 35px;
   @media (max-width: 576px) {
-    width: 80%;
+    width: 100%;
+    margin-bottom: 80px;
   }
 `
 export const EachItem = styled.button`
@@ -68,6 +78,10 @@ export const EachItem = styled.button`
 export const ImageElement = styled.img`
   width: 135px;
   height: 135px;
+  @media (max-width: 576px) {
+    width: 150px;
+    height: 150px;
+  }
 `
 export const RulesButton = styled.button`
   background-color: #ffffff;
@@ -161,4 +175,8 @@ export const Heading = styled.h1`
   font-size: 18px;
   color: #ffffff;
   margin-left: 35px;
+  @media (max-width: 576px) {
+    width: 100%;
+    font-size: 25px;
+  }
 `
