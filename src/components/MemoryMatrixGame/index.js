@@ -370,6 +370,23 @@ class MatrixGame extends Component {
     history.replace('/')
   }
 
+  playAgainButton = () => {
+    this.setState(
+      {
+        level: 1,
+        Result: false,
+        timeUp: false,
+        randomBoxes: [],
+        selectedBoxes: [],
+        hiddenBoxes: [],
+        choosedBoxes: [],
+        wrongClick: [],
+        CorrectChoice: false,
+      },
+      this.Random,
+    )
+  }
+
   SelectedBox = id => {
     const {hiddenBoxes, choosedBoxes} = this.state
     const BoxPresent = hiddenBoxes.includes(id)
@@ -443,7 +460,7 @@ class MatrixGame extends Component {
     }
     return Result ? (
       <div className="MMGameResultContainer">
-        <ul className="MMGameResultUnorerederList">
+        <ul className="MMGameResultUnorderedList">
           {emojisArray.map(each => (
             <Emojis key={each.id} item={each} />
           ))}
@@ -456,6 +473,22 @@ class MatrixGame extends Component {
           trailColor="#D3D3D3"
           className="ProgressBar"
         />
+        <ul className="MMGameResultUnorderedList">
+          <li className="MMResultLevel">Level 1</li>
+          <li className="MMResultLevel">Level 2</li>
+          <li className="MMResultLevel">Level 3</li>
+          <li className="MMResultLevel">Level 4</li>
+          <li className="MMResultLevel">Level 5</li>
+        </ul>
+        <h1 className="MMResultCongratsHeading">Congratulation!</h1>
+        <p className="MMResultPara">You have reached level {level}</p>
+        <button
+          className="MMResultButton"
+          type="button"
+          onClick={this.playAgainButton}
+        >
+          Play Again
+        </button>
       </div>
     ) : (
       <div className="MMGameMainContainer">

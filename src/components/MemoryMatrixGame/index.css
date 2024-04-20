@@ -119,14 +119,45 @@
   width: 75%;
 }
 .MMemojis {
-  width: 35px;
-  height: 35px;
+  width: 45px;
+  height: 45px;
 }
 .MMResultEmojisListItem {
   list-style-type: none;
-  margin: 8px;
+  margin: 45px;
+  margin-bottom: 15px;
 }
-.MMGameResultUnorerederList {
+.MMGameResultUnorderedList {
   display: flex;
   padding: 0;
+}
+.MMResultLevel {
+  list-style-type: none;
+  margin: 65px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  color: #ffffff;
+  font-size: 25px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.MMResultCongratsHeading {
+  color: blue;
+  font-size: 55px;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0px;
+}
+.MMResultPara {
+  color: #ffffff;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 35px;
+  margin-top: 18px;
+}
+.MMResultButton {
+  border: 0 none;
+  background-color: blue;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 25px;
 }
