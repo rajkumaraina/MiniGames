@@ -1,6 +1,14 @@
 .MMGameMainContainer {
   background: rgba(26, 32, 44, 1);
+  height: 100%;
+}
+.MMGameResultContainer {
+  background: rgba(26, 32, 44, 1);
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .MMGameHeading {
   font-family: Bree Serif;
@@ -29,13 +37,70 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
-  width: 245px;
+  width: 250px;
+  margin-bottom: 100px;
 }
-.MMListItemBox {
+.MMUnorderedBox-level2 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 350px;
+  margin-bottom: 120px;
+}
+.MMUnorderedBox-level3 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 450px;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level4 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 490px;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level5 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 550px;
+  margin-bottom: 140px;
+}
+.MMListItemBox-level1 {
   background-color: rgba(203, 213, 225, 1);
   list-style-type: none;
   width: 70px;
   height: 70px;
+  margin: 5px;
+}
+.MMListItemBox-level2 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 68px;
+  height: 68px;
+  margin: 5px;
+}
+.MMListItemBox-level3 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 66px;
+  height: 66px;
+  margin: 5px;
+}
+.MMListItemBox-level4 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 64px;
+  height: 64px;
+  margin: 5px;
+}
+.MMListItemBox-level5 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 62px;
+  height: 62px;
   margin: 5px;
 }
 .Active {
@@ -46,4 +111,22 @@
   border: 0 none;
   outline: none;
   cursor: pointer;
+}
+.Red {
+  background-color: red;
+}
+.ProgressBar {
+  width: 75%;
+}
+.MMemojis {
+  width: 35px;
+  height: 35px;
+}
+.MMResultEmojisListItem {
+  list-style-type: none;
+  margin: 8px;
+}
+.MMGameResultUnorerederList {
+  display: flex;
+  padding: 0;
 }
