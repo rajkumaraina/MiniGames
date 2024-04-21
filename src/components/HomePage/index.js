@@ -16,7 +16,7 @@ const HomePage = () => (
           <p className="GameName">Emoji Game</p>
         </li>
       </Link>
-      <Link to="/MemoryMatrix" className="HomePageLinkElement">
+      <Link to="/MMRules" className="HomePageLinkElement">
         <li className="HomePageListItem">
           <p className="GameName">Memory Matrix</p>
           <img

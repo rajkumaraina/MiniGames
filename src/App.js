@@ -10,7 +10,13 @@ import RPSRules from './components/RPS_Rules'
 
 import RPSGame from './components/RPSGame'
 
+import MMRules from './components/MMRules'
+
 import MatrixGame from './components/MemoryMatrixGame'
+
+import CardFlipRules from './components/Card-FlipRules'
+
+import CardFlipGame from './components/Card-FlipGame'
 
 import './App.css'
 
@@ -164,7 +170,10 @@ const App = () => (
     <Route exact path="/EmojiGame" component={EmojiGame} />
     <Route exact path="/RockPaperScissorRules" component={RPSRules} />
     <Route exact path="/RockPaperScissor" component={RPSGame} />
+    <Route exact path="/MMRules" component={MMRules} />
     <Route exact path="/MemoryMatrix" component={MatrixGame} />
+    <Route exact path="/CardFlipRules" component={CardFlipRules} />
+    <Route exact path="/CardFlipGame" component={CardFlipGame} />
   </Switch>
 )
 

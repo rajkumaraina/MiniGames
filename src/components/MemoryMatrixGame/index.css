@@ -10,6 +10,9 @@
   justify-content: center;
   align-items: center;
 }
+.blackcolor {
+  color: rgba(51, 65, 85, 1);
+}
 .MMGameHeading {
   font-family: Bree Serif;
   font-size: 44px;
@@ -73,6 +76,7 @@
   list-style-type: none;
   width: 70px;
   height: 70px;
+  cursor: pointer;
   margin: 5px;
 }
 .MMListItemBox-level2 {
@@ -81,6 +85,7 @@
   width: 68px;
   height: 68px;
   margin: 5px;
+  cursor: pointer;
 }
 .MMListItemBox-level3 {
   background-color: rgba(203, 213, 225, 1);
@@ -88,6 +93,7 @@
   width: 66px;
   height: 66px;
   margin: 5px;
+  cursor: pointer;
 }
 .MMListItemBox-level4 {
   background-color: rgba(203, 213, 225, 1);
@@ -95,6 +101,7 @@
   width: 64px;
   height: 64px;
   margin: 5px;
+  cursor: pointer;
 }
 .MMListItemBox-level5 {
   background-color: rgba(203, 213, 225, 1);
@@ -102,6 +109,7 @@
   width: 62px;
   height: 62px;
   margin: 5px;
+  cursor: pointer;
 }
 .Active {
   background: rgba(70, 122, 255, 1);

@@ -1,0 +1,89 @@
+.CardFlipRulesMaincontainer {
+  background: rgba(20, 51, 46, 1);
+  height: 100%;
+  padding-bottom: 20px;
+}
+.white {
+  color: #ffffff;
+}
+.MMRulesHeading {
+  font-family: Bree Serif;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 0;
+}
+
+.CardFlipRulesImage {
+  margin: 8px;
+  width: 484px;
+  height: 300px;
+}
+.RPSRulesTopContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.RPSRulesName {
+  font-family: Bree Serif;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 48px;
+  text-align: left;
+  margin-left: 105px;
+}
+.RpsUnorderedList {
+  padding: 0px;
+  margin-left: 125px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.CardFlipListItem {
+  margin: 8px;
+  font-family: Bree Serif;
+  font-size: 20px;
+  font-weight: 400;
+  text-align: left;
+  color: white;
+  width: 45%;
+}
+
+.RpsSpanElement {
+  color: yellow;
+}
+.CardFlipPlayButton {
+  background: rgba(255, 255, 255, 1);
+  color: #333333;
+  padding: 12px;
+  border: 0 none;
+  outline: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 8px;
+  margin: 8px;
+  margin-left: 105px;
+  font-family: Bree Serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+@media (max-width: 576px) {
+  .RPSRulesHeading {
+    font-size: 30px;
+    line-height: normal;
+  }
+  .RpsListItem {
+    width: 100%;
+  }
+  .RpsUnorderedList {
+    padding: 30px;
+    margin-left: 0;
+  }
+  .RPSRulesName {
+    text-align: center;
+    margin-left: 0;
+  }
+  .RpsPlayButton {
+    margin-left: 150px;
+  }
+}

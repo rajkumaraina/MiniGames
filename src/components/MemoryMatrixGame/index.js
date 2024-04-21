@@ -284,7 +284,6 @@ class MatrixGame extends Component {
     let counter = 0
     const TimerId = setInterval(() => {
       counter += 1
-      console.log('hi')
       if (counter === 3) {
         clearInterval(TimerId)
         this.setState(prevState => ({
@@ -307,13 +306,11 @@ class MatrixGame extends Component {
       }
       this.setState({randomBoxes: randomValues})
     } else if (level === 2) {
-      console.log('level 2')
       const randomValues = []
       let value
       let isPresent
       for (let i = 1; i < 16; i = i + 1) {
         value = Math.floor(Math.random() * 16)
-        console.log(value)
         isPresent = randomValues.includes(value)
         if (isPresent === false && randomValues.length < 4) {
           randomValues.push(value)
@@ -321,13 +318,11 @@ class MatrixGame extends Component {
       }
       this.setState({randomBoxes: randomValues})
     } else if (level === 3) {
-      console.log('level 3')
       const randomValues = []
       let value
       let isPresent
       for (let i = 1; i < 25; i = i + 1) {
         value = Math.floor(Math.random() * 25)
-        console.log(value)
         isPresent = randomValues.includes(value)
         if (isPresent === false && randomValues.length < 5) {
           randomValues.push(value)
@@ -335,13 +330,11 @@ class MatrixGame extends Component {
       }
       this.setState({randomBoxes: randomValues})
     } else if (level === 4) {
-      console.log('level 4')
       const randomValues = []
       let value
       let isPresent
       for (let i = 1; i < 36; i = i + 1) {
         value = Math.floor(Math.random() * 36)
-        console.log(value)
         isPresent = randomValues.includes(value)
         if (isPresent === false && randomValues.length < 6) {
           randomValues.push(value)
@@ -349,13 +342,11 @@ class MatrixGame extends Component {
       }
       this.setState({randomBoxes: randomValues})
     } else if (level === 5) {
-      console.log('level 5')
       const randomValues = []
       let value
       let isPresent
       for (let i = 1; i < 49; i = i + 1) {
         value = Math.floor(Math.random() * 49)
-        console.log(value)
         isPresent = randomValues.includes(value)
         if (isPresent === false && randomValues.length < 7) {
           randomValues.push(value)
@@ -397,21 +388,25 @@ class MatrixGame extends Component {
         Result: true,
       }))
     } else {
-      this.setState(prevState => ({
-        choosedBoxes: [...prevState.choosedBoxes, id],
-        CorrectChoice: true,
-      }))
-      if (choosedBoxes.length === hiddenBoxes.length - 1) {
-        this.setState(
-          prevState => ({
-            level: prevState.level + 1,
-            choosedBoxes: [],
-            hiddenBoxes: [],
-            randomBoxes: [],
-            timeUp: false,
-          }),
-          this.Random,
-        )
+      const countOfBox = choosedBoxes.filter(each => each === id)
+      const FinalCount = countOfBox.length
+      if (FinalCount === 0) {
+        this.setState(prevState => ({
+          choosedBoxes: [...prevState.choosedBoxes, id],
+          CorrectChoice: true,
+        }))
+        if (choosedBoxes.length === hiddenBoxes.length - 1) {
+          this.setState(
+            prevState => ({
+              level: prevState.level + 1,
+              choosedBoxes: [],
+              hiddenBoxes: [],
+              randomBoxes: [],
+              timeUp: false,
+            }),
+            this.Random,
+          )
+        }
       }
     }
   }
@@ -528,94 +523,40 @@ class MatrixGame extends Component {
                           <MdClose />
                         </button>
                       </div>
-                      <h1 className="rulesHeading white">Rules</h1>
+                      <h1 className="rulesHeading blackcolor">Rules</h1>
                       <ul className="RpsUnorderedList">
-                        <li className="RpsListItem RPSRULESLIST">
-                          The game result should be based on user and user
-                          opponent choices
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          In each level of the Game, Users should be able to see
+                          the Grid with (N X N) size starting from 3 and the
+                          grid will highlight N cells in Blue, the N highlighted
+                          cells will be picked randomly.
                         </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is rock and his opponent choice
-                          is scissors then the result will be{' '}
-                          <span className="RpsSpanElement orange">YOU WON</span>
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          The highlighted cells will remain N seconds for the
+                          user to memorize the cells. At this point, the user
+                          should not be able to perform any action.
                         </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is rock and his opponent choice
-                          is rock then the result will be{' '}
-                          <span className="RpsSpanElement orange">
-                            IT IS DRAW{' '}
-                          </span>
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          After N seconds, the grid will clear the N highlighted
+                          cells.
                         </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is paper and his opponent choice
-                          is scissors then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU LOSE
-                          </span>
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          At N seconds, the user can click on any cell. Clicking
+                          on a cell that was highlighted before it will turn
+                          blue. Clicking on the other cells that were not
+                          highlighted before then will turn to red.
                         </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is paper and his opponent choice
-                          is rock then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU WON
-                          </span>
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          The user should be promoted to the next level if they
+                          guess all N cells correctly in one attempt.
                         </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is scissors and his opponent
-                          choice is scissors then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            IT IS DRAW
-                          </span>
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          The user should be taken to the results page if the
+                          user clicks on the wrong cell.
                         </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is a scissor and his opponent
-                          choice is rock then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU LOSE
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the result is{' '}
-                          <span className="RpsSpanElement orange">YOU WON</span>
-                          , then the count of the score should be incremented by
-                          1
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is paper and his opponent choice
-                          is paper then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            IT IS DRAW
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the result is{' '}
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            IT IS DRAW
-                          </span>
-                          , then the count of the score should be the same
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is scissors and his opponent
-                          choice is paper then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU WON
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the result is
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU LOSE
-                          </span>
-                          , then the count of the score should be decremented by
-                          1.
+                        <li className="MMListItem RPSRULESLIST blackcolor">
+                          If the user completed all the levels, then the user
+                          should be taken to the results page.
                         </li>
                       </ul>
                     </div>
