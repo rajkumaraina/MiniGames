@@ -139,10 +139,17 @@ const CardFlip = props => {
     selectedId,
     correctlySelected,
     NoAction,
+    wrongIds,
   } = props
   const {name, image, id} = item
+  console.log(wrongIds)
   const ParticularItem = cardsData.find(each => each.id === id)
+  let CardBackground = wrongIds.includes(id)
   let ImageElement
+  if (CardBackground) {
+    CardBackground = 'WrongChoice'
+  }
+  console.log(CardBackground)
   const Clicked = () => {
     CardSelected(id)
   }
@@ -162,7 +169,7 @@ const CardFlip = props => {
     }
   }
   return NoAction ? (
-    <li className="CardsListItem">
+    <li className={`CardsListItem ${CardBackground}`}>
       <img src={ImageElement} className="FootPrintImg" alt="animalImg" />
     </li>
   ) : (
@@ -178,6 +185,7 @@ class CardFlipGame extends Component {
     selectedId: [],
     correctlySelected: [],
     NoAction: false,
+    wrongIds: [],
   }
 
   check = () => {
@@ -196,10 +204,17 @@ class CardFlipGame extends Component {
           secondItem,
         ],
         selected: [],
+        NoAction: false,
+        wrongIds: [],
       }))
     } else {
       const timeOut = setTimeout(() => {
-        this.setState({selected: [], selectedId: [], NoAction: false})
+        this.setState(prevState => ({
+          selected: [],
+          selectedId: [],
+          NoAction: false,
+          wrongIds: [],
+        }))
         clearTimeout(timeOut)
       }, 2000)
     }
@@ -221,6 +236,10 @@ class CardFlipGame extends Component {
     }
     if (selected.length > 0) {
       const SecondItem = cardsData.find(each => each.id === id)
+      const wrongcheck = selected.includes(id)
+      if (wrongcheck === false) {
+        this.setState(prevState => ({wrongIds: [...prevState.wrongIds, id]}))
+      }
       this.setState(
         prevState => ({
           selected: [...prevState.selected, SecondItem],
@@ -233,7 +252,13 @@ class CardFlipGame extends Component {
   }
 
   render() {
-    const {selected, selectedId, correctlySelected, NoAction} = this.state
+    const {
+      selected,
+      selectedId,
+      correctlySelected,
+      NoAction,
+      wrongIds,
+    } = this.state
     return (
       <div className="CardFlipMainContainer">
         <div className="EmojiHomeBack">
@@ -329,6 +354,7 @@ class CardFlipGame extends Component {
               selectedId={selectedId}
               correctlySelected={correctlySelected}
               NoAction={NoAction}
+              wrongIds={wrongIds}
             />
           ))}
         </ul>
