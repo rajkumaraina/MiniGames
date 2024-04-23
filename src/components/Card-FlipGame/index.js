@@ -142,14 +142,20 @@ const CardFlip = props => {
     wrongIds,
   } = props
   const {name, image, id} = item
-  console.log(wrongIds)
+  let itemId
   const ParticularItem = cardsData.find(each => each.id === id)
   let CardBackground = wrongIds.includes(id)
   let ImageElement
   if (CardBackground) {
     CardBackground = 'WrongChoice'
   }
-  console.log(CardBackground)
+  if (selected.length > 0) {
+    itemId = selected[0].id
+    if (itemId === id) {
+      CardBackground = 'CorrectChoice'
+    }
+  }
+
   const Clicked = () => {
     CardSelected(id)
   }
@@ -168,12 +174,15 @@ const CardFlip = props => {
         'https://res.cloudinary.com/dktgcdgar/image/upload/v1713775574/foot-print_1_v2i0ik.png'
     }
   }
+  if (correctlySelected.includes(ParticularItem)) {
+    CardBackground = 'CorrectChoice'
+  }
   return NoAction ? (
     <li className={`CardsListItem ${CardBackground}`}>
       <img src={ImageElement} className="FootPrintImg" alt="animalImg" />
     </li>
   ) : (
-    <li className="CardsListItem" onClick={Clicked}>
+    <li className={`CardsListItem ${CardBackground}`} onClick={Clicked}>
       <img src={ImageElement} className="FootPrintImg" alt="animalImg" />
     </li>
   )
@@ -186,17 +195,67 @@ class CardFlipGame extends Component {
     correctlySelected: [],
     NoAction: false,
     wrongIds: [],
+    TimerSec: 60,
+    TimerMin: 2,
+    FlipCount: 0,
+    Score: 0,
+    Result: false,
+    Win: false,
+  }
+
+  componentDidMount = () => {
+    this.TimerValue = setInterval(() => {
+      this.TimerCount()
+    }, 1000)
+  }
+
+  componentWillUnMount = () => {
+    clearInterval(this.TimerValue)
+  }
+
+  TimerCount = () => {
+    const {TimerSec, TimerMin} = this.state
+    if (TimerSec === 60) {
+      this.setState(prevState => ({
+        TimerSec: prevState.TimerSec - 1,
+        TimerMin: prevState.TimerMin - 1,
+      }))
+    } else if (TimerSec === 0 && TimerMin === 0) {
+      clearInterval(this.TimerValue)
+      this.setState({Result: true, Win: false})
+    } else if (TimerSec === 1 && TimerMin !== 0) {
+      this.setState({
+        TimerSec: 60,
+      })
+    } else {
+      this.setState(prevState => ({TimerSec: prevState.TimerSec - 1}))
+    }
+  }
+
+  playAgainClicked = () => {
+    this.setState(
+      {
+        selected: [],
+        selectedId: [],
+        correctlySelected: [],
+        NoAction: false,
+        wrongIds: [],
+        TimerSec: 60,
+        TimerMin: 2,
+        FlipCount: 0,
+        Score: 0,
+        Result: false,
+        Win: false,
+      },
+      this.componentDidMount,
+    )
   }
 
   check = () => {
     const {selected, correctlySelected} = this.state
-    console.log(selected)
     const firstItem = selected[0]
     const secondItem = selected[1]
-    console.log(firstItem)
-    console.log(secondItem)
     if (firstItem.name === secondItem.name) {
-      console.log('Same')
       this.setState(prevState => ({
         correctlySelected: [
           ...prevState.correctlySelected,
@@ -206,7 +265,11 @@ class CardFlipGame extends Component {
         selected: [],
         NoAction: false,
         wrongIds: [],
+        Score: prevState.Score + 1,
       }))
+      if (correctlySelected.length === 18) {
+        this.setState({Result: true, Win: true})
+      }
     } else {
       const timeOut = setTimeout(() => {
         this.setState(prevState => ({
@@ -227,27 +290,31 @@ class CardFlipGame extends Component {
 
   CardSelected = id => {
     const {selected} = this.state
-    if (selected.length === 0) {
-      const SelectedItem = cardsData.find(each => each.id === id)
-      this.setState(prevState => ({
-        selected: [...prevState.selected, SelectedItem],
-        selectedId: [...prevState.selectedId, id],
-      }))
-    }
-    if (selected.length > 0) {
-      const SecondItem = cardsData.find(each => each.id === id)
-      const wrongcheck = selected.includes(id)
-      if (wrongcheck === false) {
-        this.setState(prevState => ({wrongIds: [...prevState.wrongIds, id]}))
-      }
-      this.setState(
-        prevState => ({
-          selected: [...prevState.selected, SecondItem],
+    const reminder = selected.find(each => each.id === id)
+    if (reminder === undefined) {
+      this.setState(prevState => ({FlipCount: prevState.FlipCount + 1}))
+      if (selected.length === 0) {
+        const SelectedItem = cardsData.find(each => each.id === id)
+        this.setState(prevState => ({
+          selected: [...prevState.selected, SelectedItem],
           selectedId: [...prevState.selectedId, id],
-          NoAction: true,
-        }),
-        this.check,
-      )
+        }))
+      }
+      if (selected.length > 0) {
+        const SecondItem = cardsData.find(each => each.id === id)
+        const wrongcheck = selected.includes(id)
+        if (wrongcheck === false) {
+          this.setState(prevState => ({wrongIds: [...prevState.wrongIds, id]}))
+        }
+        this.setState(
+          prevState => ({
+            selected: [...prevState.selected, SecondItem],
+            selectedId: [...prevState.selectedId, id],
+            NoAction: true,
+          }),
+          this.check,
+        )
+      }
     }
   }
 
@@ -258,8 +325,73 @@ class CardFlipGame extends Component {
       correctlySelected,
       NoAction,
       wrongIds,
+      TimerMin,
+      Result,
+      Win,
     } = this.state
-    return (
+    let {TimerSec, FlipCount, Score} = this.state
+    console.log(Result, Win)
+    if (TimerSec === 60) {
+      TimerSec = `00`
+    } else if (TimerSec < 10) {
+      TimerSec = `0${TimerSec}`
+    }
+    if (FlipCount < 10) {
+      FlipCount = `0${FlipCount}`
+    }
+    if (Score < 10) {
+      Score = `0${Score}`
+    }
+    let ResultPage
+    if (Win) {
+      ResultPage = (
+        <div className="CardFlipResultContainer">
+          <img
+            src="https://res.cloudinary.com/dktgcdgar/image/upload/v1713614304/grinning-face-with-big-eyes_1f603_ytzhjq.png"
+            className="CardFlipResultEmoji"
+            alt="emoji"
+          />
+          <h1 className="CardFlipResultCongrats">Congratulations!</h1>
+          <p className="CardFlipResultPara">No.of Flips-{FlipCount}</p>
+          <p className="CardFlipResultPara2">
+            You matched all of the cards in record time
+          </p>
+          <button
+            className="CardFlipPlayAgainButton"
+            type="button"
+            onClick={this.playAgainClicked}
+          >
+            Play Again
+          </button>
+        </div>
+      )
+    } else {
+      ResultPage = (
+        <div className="CardFlipResultContainer">
+          <img
+            src="https://res.cloudinary.com/dktgcdgar/image/upload/v1713612175/neutral-face_1f610_nfcmnd.png"
+            className="CardFlipResultEmoji"
+            alt="emoji"
+          />
+          <h1 className="CardFlipResultCongrats">Better luck next time!</h1>
+          <p className="CardFlipResultPara">No.of Flips-{FlipCount}</p>
+          <p className="CardFlipResultPara2">
+            You did not match all of the cards in record time
+          </p>
+          <button
+            className="CardFlipPlayAgainButton"
+            type="button"
+            onClick={this.playAgainClicked}
+          >
+            Play Again
+          </button>
+        </div>
+      )
+    }
+
+    return Result ? (
+      ResultPage
+    ) : (
       <div className="CardFlipMainContainer">
         <div className="EmojiHomeBack">
           <div className="EmojiBackIconContainer">
@@ -340,9 +472,14 @@ class CardFlipGame extends Component {
         </div>
         <h1 className="CardFlipGameHeading">Card-Flip Memory Game</h1>
         <div className="CardFlipScoreContainer">
-          <p className="CardFlipCount">Card flip count-00</p>
-          <p className="CardFlipTimer">Timer-02:00</p>
-          <p className="CardFlipScore">Score-00</p>
+          <p className="CardFlipCount">Card flip count-{FlipCount}</p>
+          <p className="CardFlipTimer">
+            Timer-
+            <span>
+              0{TimerMin}:{TimerSec}
+            </span>
+          </p>
+          <p className="CardFlipScore">Score-{Score}</p>
         </div>
         <ul className="CardFlipUnordered">
           {cardsData.map(each => (
