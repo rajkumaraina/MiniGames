@@ -32,7 +32,17 @@
   color: #ffffff;
   font-family: Bree Serif;
 }
+.CardLowestFlip {
+  font-size: 22px;
+  color: #ffffff;
+  font-family: Bree Serif;
+}
 .CardFlipScore {
+  font-size: 22px;
+  font-family: Bree Serif;
+  color: #ffffff;
+}
+.CardLowestFlip {
   font-size: 22px;
   font-family: Bree Serif;
   color: #ffffff;
@@ -139,22 +149,29 @@
   font-weight: 400;
   line-height: 24px;
 }
+.Containerone {
+  display: none;
+}
+.Containertwo {
+  display: none;
+}
+.CardFlipTimerSmallDevices {
+  display: none;
+}
 @media (max-width: 576px) {
   .CardFlipMainContainer {
     height: 100vh;
   }
   .CardFlipScoreContainer {
     width: 100%;
-  }
-  .CardFlipTimerSmallDevices {
-    display: flex;
-    text-align: center;
-    font-size: 28px;
-    color: #ffffff;
-    font-family: Bree Serif;
+    display: none;
   }
   .CardFlipTimer {
     display: none;
+  }
+  .CardLowestFlip {
+    font-size: 22px;
+    margin-bottom: 0;
   }
   .CardFlipUnordered {
     width: 100%;
@@ -171,8 +188,35 @@
   }
   .CardFlipScore {
     margin-right: 4px;
+    font-size: 22px;
   }
   .CardFlipCount {
     margin-left: 4px;
+    font-size: 22px;
+  }
+  .Containerone {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0;
+  }
+  .Containertwo {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 0;
+  }
+  .CardFlipTimerSmallDevices {
+    display: flex;
+    font-size: 32px;
+    color: #ffffff;
+    font-family: Bree Serif;
+    margin-bottom: 0;
   }
 }

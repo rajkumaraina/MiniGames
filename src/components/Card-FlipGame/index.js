@@ -199,6 +199,7 @@ class CardFlipGame extends Component {
     TimerMin: 2,
     FlipCount: 0,
     Score: 0,
+    lowestFlipCount: 0,
     Result: false,
     Win: false,
   }
@@ -252,7 +253,7 @@ class CardFlipGame extends Component {
   }
 
   check = () => {
-    const {selected, correctlySelected} = this.state
+    const {selected, correctlySelected, lowestFlipCount, FlipCount} = this.state
     const firstItem = selected[0]
     const secondItem = selected[1]
     if (firstItem.name === secondItem.name) {
@@ -268,7 +269,11 @@ class CardFlipGame extends Component {
         Score: prevState.Score + 1,
       }))
       if (correctlySelected.length === 18) {
-        this.setState({Result: true, Win: true})
+        if (FlipCount < lowestFlipCount || lowestFlipCount === 0) {
+          this.setState({lowestFlipCount: FlipCount, Result: true, Win: true})
+        } else {
+          this.setState({Result: true, Win: true})
+        }
       }
     } else {
       const timeOut = setTimeout(() => {
@@ -329,7 +334,7 @@ class CardFlipGame extends Component {
       Result,
       Win,
     } = this.state
-    let {TimerSec, FlipCount, Score} = this.state
+    let {TimerSec, FlipCount, Score, lowestFlipCount} = this.state
     console.log(Result, Win)
     if (TimerSec === 60) {
       TimerSec = `00`
@@ -341,6 +346,9 @@ class CardFlipGame extends Component {
     }
     if (Score < 10) {
       Score = `0${Score}`
+    }
+    if (lowestFlipCount < 10) {
+      lowestFlipCount = `0${lowestFlipCount}`
     }
     let ResultPage
     if (Win) {
@@ -471,20 +479,26 @@ class CardFlipGame extends Component {
           </div>
         </div>
         <h1 className="CardFlipGameHeading">Card-Flip Memory Game</h1>
-        <p className="CardFlipTimerSmallDevices">
-          Timer-
+        <p className="CardFlipTimer">
           <span>
             0{TimerMin}:{TimerSec}
           </span>
         </p>
-        <div className="CardFlipScoreContainer">
-          <p className="CardFlipCount">Card flip count-{FlipCount}</p>
-          <p className="CardFlipTimer">
-            Timer-
+        <div className="Containerone">
+          <p className="CardLowestFlip">Lowest Flip Count-00</p>
+          <p className="CardFlipTimerSmallDevices">
             <span>
               0{TimerMin}:{TimerSec}
             </span>
           </p>
+        </div>
+        <div className="Containertwo">
+          <p className="CardFlipCount">Card flip count-{FlipCount}</p>
+          <p className="CardFlipScore">Score-{Score}</p>
+        </div>
+        <div className="CardFlipScoreContainer">
+          <p className="CardFlipCount">Card flip count-{FlipCount}</p>
+          <p className="CardLowestFlip">Lowest Flip Count-{lowestFlipCount}</p>
           <p className="CardFlipScore">Score-{Score}</p>
         </div>
         <ul className="CardFlipUnordered">

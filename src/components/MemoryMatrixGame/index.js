@@ -792,6 +792,7 @@ class MatrixGame extends Component {
     randomBoxes: [],
     selectedBoxes: [],
     level: 1,
+    maxlevel: 0,
     hiddenBoxes: [],
     choosedBoxes: [],
     timeUp: false,
@@ -805,7 +806,10 @@ class MatrixGame extends Component {
   }
 
   Random = () => {
-    const {level} = this.state
+    const {level, maxlevel} = this.state
+    if (level > maxlevel) {
+      this.setState({maxlevel: level})
+    }
     let counter = 0
     const TimerId = setInterval(() => {
       counter += 1
@@ -1004,69 +1008,82 @@ class MatrixGame extends Component {
   render() {
     const {
       randomBoxes,
-      selectedBoxes,
       level,
-      hiddenBoxes,
       choosedBoxes,
       timeUp,
       Result,
       CorrectChoice,
       wrongClick,
     } = this.state
+    let {maxlevel} = this.state
     let LEVELS
     let UnorderedListBackground
     let progress
     let ListItemWidth
+    let LevelContainer
+    if (maxlevel < 10) {
+      maxlevel = `0${maxlevel}`
+    }
     if (level === 1) {
       LEVELS = MMLEVEL1
       progress = 10
       ListItemWidth = 'MMListItemBox-level1'
       UnorderedListBackground = 'MMUnorderedBox-level1'
+      LevelContainer = 'MMLevelMainContainer-level1'
     } else if (level === 2) {
       LEVELS = MMLEVEL2
       progress = 20
       ListItemWidth = 'MMListItemBox-level2'
       UnorderedListBackground = 'MMUnorderedBox-level2'
+      LevelContainer = 'MMLevelMainContainer-level2'
     } else if (level === 3) {
       LEVELS = MMLEVEL3
       progress = 30
       ListItemWidth = 'MMListItemBox-level3'
       UnorderedListBackground = 'MMUnorderedBox-level3'
+      LevelContainer = 'MMLevelMainContainer-level3'
     } else if (level === 4) {
       LEVELS = MMLEVEL4
       progress = 40
       ListItemWidth = 'MMListItemBox-level4'
       UnorderedListBackground = 'MMUnorderedBox-level4'
+      LevelContainer = 'MMLevelMainContainer-level4'
     } else if (level === 5) {
       LEVELS = MMLEVEL5
       progress = 50
       ListItemWidth = 'MMListItemBox-level5'
       UnorderedListBackground = 'MMUnorderedBox-level5'
+      LevelContainer = 'MMLevelMainContainer-level5'
     } else if (level === 6) {
       LEVELS = MMLEVEL6
       progress = 60
       ListItemWidth = 'MMListItemBox-level6'
       UnorderedListBackground = 'MMUnorderedBox-level6'
+      LevelContainer = 'MMLevelMainContainer-level6'
     } else if (level === 7) {
       LEVELS = MMLEVEL7
       progress = 70
       ListItemWidth = 'MMListItemBox-level7'
       UnorderedListBackground = 'MMUnorderedBox-level7'
+      LevelContainer = 'MMLevelMainContainer-level7'
     } else if (level === 8) {
       LEVELS = MMLEVEL8
       progress = 80
       ListItemWidth = 'MMListItemBox-level8'
       UnorderedListBackground = 'MMUnorderedBox-level8'
+      LevelContainer = 'MMLevelMainContainer-level8'
     } else if (level === 9) {
       LEVELS = MMLEVEL9
       progress = 90
       ListItemWidth = 'MMListItemBox-level9'
       UnorderedListBackground = 'MMUnorderedBox-level9'
+      LevelContainer = 'MMLevelMainContainer-level9'
     } else if (level === 10) {
       LEVELS = MMLEVEL10
       progress = 100
       ListItemWidth = 'MMListItemBox-level10'
       UnorderedListBackground = 'MMUnorderedBox-level10'
+      LevelContainer = 'MMLevelMainContainer-level10'
     }
     return Result ? (
       <div className="MMGameResultContainer">
@@ -1191,7 +1208,11 @@ class MatrixGame extends Component {
         </div>
         <h1 className="MMGameHeading">Memory Matrix</h1>
         <div className="MMLevelContainer">
-          <p className="MMLevel">Level {level}</p>
+          <div className={`${LevelContainer}`}>
+            <p className="MMLevel">Level {level}</p>
+            <p className="MMMaxLevel">Max Level-{maxlevel}</p>
+          </div>
+
           <ul className={`${UnorderedListBackground}`}>
             {LEVELS.map(each => (
               <MMLevelListItems

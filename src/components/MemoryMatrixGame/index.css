@@ -46,6 +46,64 @@
   text-align: center;
   color: #ffffff;
 }
+.MMMaxLevel {
+  font-family: Bree Serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32.59px;
+  text-align: center;
+  color: #ffffff;
+}
+.MMLevelMainContainer-level1 {
+  width: 230px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level2 {
+  width: 310px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level3 {
+  width: 370px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level4 {
+  width: 430px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level5 {
+  width: 490px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level6 {
+  width: 540px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level7 {
+  width: 600px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level8 {
+  width: 660px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level9 {
+  width: 700px;
+  display: flex;
+  justify-content: space-between;
+}
+.MMLevelMainContainer-level10 {
+  width: 740px;
+  display: flex;
+  justify-content: space-between;
+}
 .MMUnorderedBox-level1 {
   display: flex;
   padding: 0;
@@ -211,12 +269,22 @@
   .MMUnorderedBox-level4 {
     width: 100%;
   }
+  .MMLevelMainContainer-level4 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .MMListItemBox-level4 {
     width: 55px;
     height: 55px;
   }
   .MMUnorderedBox-level5 {
     width: 100%;
+  }
+  .MMLevelMainContainer-level5 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .MMListItemBox-level5 {
     width: 45px;
@@ -225,12 +293,22 @@
   .MMUnorderedBox-level6 {
     width: 100%;
   }
+  .MMLevelMainContainer-level6 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .MMListItemBox-level6 {
     width: 40px;
     height: 40px;
   }
   .MMUnorderedBox-level7 {
     width: 100%;
+  }
+  .MMLevelMainContainer-level7 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .MMListItemBox-level7 {
     width: 35px;
@@ -239,6 +317,11 @@
   .MMUnorderedBox-level8 {
     width: 100%;
   }
+  .MMLevelMainContainer-level8 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .MMListItemBox-level8 {
     width: 30px;
     height: 30px;
@@ -246,12 +329,22 @@
   .MMUnorderedBox-level9 {
     width: 100%;
   }
+  .MMLevelMainContainer-level9 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
   .MMListItemBox-level9 {
     width: 25px;
     height: 25px;
   }
   .MMUnorderedBox-level10 {
     width: 100%;
+  }
+  .MMLevelMainContainer-level10 {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
   }
   .MMListItemBox-level10 {
     width: 23px;
