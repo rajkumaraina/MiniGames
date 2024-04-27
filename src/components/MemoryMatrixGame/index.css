@@ -10,6 +10,11 @@
   justify-content: center;
   align-items: center;
 }
+@media (max-width: 576px) {
+  .MMGameMainContainer {
+    height: 100vh;
+  }
+}
 .blackcolor {
   color: rgba(51, 65, 85, 1);
 }
@@ -22,11 +27,16 @@
   color: #ffffff;
 }
 .MMLevelContainer {
-  margin-top: 18px;
+  margin-top: 8px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 576px) {
+  .MMLevelContainer {
+    margin-top: 120px;
+  }
 }
 .MMLevel {
   font-family: Bree Serif;
@@ -40,6 +50,7 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  justify-content: center;
   width: 250px;
   margin-bottom: 100px;
 }
@@ -47,6 +58,7 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  justify-content: center;
   width: 350px;
   margin-bottom: 120px;
 }
@@ -54,6 +66,7 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  justify-content: center;
   width: 450px;
   margin-bottom: 140px;
 }
@@ -61,6 +74,7 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  justify-content: center;
   width: 490px;
   margin-bottom: 140px;
 }
@@ -68,7 +82,48 @@
   display: flex;
   padding: 0;
   flex-wrap: wrap;
+  justify-content: center;
   width: 550px;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level6 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 600px;
+  justify-content: center;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level7 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 660px;
+  justify-content: center;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level8 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 720px;
+  justify-content: center;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level9 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 760px;
+  justify-content: center;
+  margin-bottom: 140px;
+}
+.MMUnorderedBox-level10 {
+  display: flex;
+  padding: 0;
+  flex-wrap: wrap;
+  width: 800px;
+  justify-content: center;
   margin-bottom: 140px;
 }
 .MMListItemBox-level1 {
@@ -111,6 +166,98 @@
   margin: 5px;
   cursor: pointer;
 }
+.MMListItemBox-level6 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 60px;
+  height: 60px;
+  margin: 5px;
+  cursor: pointer;
+}
+.MMListItemBox-level7 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 58px;
+  height: 58px;
+  margin: 5px;
+  cursor: pointer;
+}
+.MMListItemBox-level8 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 56px;
+  height: 56px;
+  margin: 5px;
+  cursor: pointer;
+}
+.MMListItemBox-level9 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 54px;
+  height: 54px;
+  margin: 5px;
+  cursor: pointer;
+}
+.MMListItemBox-level10 {
+  background-color: rgba(203, 213, 225, 1);
+  list-style-type: none;
+  width: 52px;
+  height: 52px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+@media (max-width: 576px) {
+  .MMUnorderedBox-level4 {
+    width: 100%;
+  }
+  .MMListItemBox-level4 {
+    width: 55px;
+    height: 55px;
+  }
+  .MMUnorderedBox-level5 {
+    width: 100%;
+  }
+  .MMListItemBox-level5 {
+    width: 45px;
+    height: 45px;
+  }
+  .MMUnorderedBox-level6 {
+    width: 100%;
+  }
+  .MMListItemBox-level6 {
+    width: 40px;
+    height: 40px;
+  }
+  .MMUnorderedBox-level7 {
+    width: 100%;
+  }
+  .MMListItemBox-level7 {
+    width: 35px;
+    height: 35px;
+  }
+  .MMUnorderedBox-level8 {
+    width: 100%;
+  }
+  .MMListItemBox-level8 {
+    width: 30px;
+    height: 30px;
+  }
+  .MMUnorderedBox-level9 {
+    width: 100%;
+  }
+  .MMListItemBox-level9 {
+    width: 25px;
+    height: 25px;
+  }
+  .MMUnorderedBox-level10 {
+    width: 100%;
+  }
+  .MMListItemBox-level10 {
+    width: 23px;
+    height: 23px;
+  }
+}
 .Active {
   background: rgba(70, 122, 255, 1);
 }
@@ -125,6 +272,9 @@
 }
 .ProgressBar {
   width: 75%;
+}
+.ProgressBarSmallDevices {
+  display: none;
 }
 .MMemojis {
   width: 45px;
@@ -168,4 +318,26 @@
   border-radius: 8px;
   padding: 12px;
   font-size: 25px;
+}
+@media (max-width: 576px) {
+  .MMResultEmojisListItem {
+    margin: 8px;
+  }
+  .MMResultLevel {
+    margin: 8px;
+    font-size: 24px;
+  }
+  .MMResultCongratsHeading {
+    font-size: 32px;
+  }
+  .MMemojis {
+    width: 35px;
+    height: 35px;
+  }
+  .ProgressBar {
+    display: none;
+  }
+  .ProgressBarSmallDevices {
+    display: flex;
+  }
 }

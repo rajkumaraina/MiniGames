@@ -86,4 +86,7 @@
   .RpsPlayButton {
     margin-left: 150px;
   }
+  .CardFlipListItem {
+    width: 100%;
+  }
 }

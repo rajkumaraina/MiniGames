@@ -221,6 +221,531 @@ const MMLEVEL5 = [
   {id: 48},
 ]
 
+const MMLEVEL6 = [
+  {id: 0},
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+  {id: 11},
+  {id: 12},
+  {id: 13},
+  {id: 14},
+  {id: 15},
+  {id: 16},
+  {id: 17},
+  {id: 18},
+  {id: 19},
+  {id: 20},
+  {id: 21},
+  {id: 22},
+  {id: 23},
+  {id: 24},
+  {id: 25},
+  {id: 26},
+  {id: 27},
+  {id: 28},
+  {id: 29},
+  {id: 30},
+  {id: 31},
+  {id: 32},
+  {id: 33},
+  {id: 34},
+  {id: 35},
+  {id: 36},
+  {id: 37},
+  {id: 38},
+  {id: 39},
+  {id: 40},
+  {id: 41},
+  {id: 42},
+  {id: 43},
+  {id: 44},
+  {id: 45},
+  {id: 46},
+  {id: 47},
+  {id: 48},
+  {id: 49},
+  {id: 50},
+  {id: 51},
+  {id: 52},
+  {id: 53},
+  {id: 54},
+  {id: 55},
+  {id: 56},
+  {id: 57},
+  {id: 58},
+  {id: 59},
+  {id: 60},
+  {id: 61},
+  {id: 62},
+  {id: 63},
+]
+
+const MMLEVEL7 = [
+  {id: 0},
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+  {id: 11},
+  {id: 12},
+  {id: 13},
+  {id: 14},
+  {id: 15},
+  {id: 16},
+  {id: 17},
+  {id: 18},
+  {id: 19},
+  {id: 20},
+  {id: 21},
+  {id: 22},
+  {id: 23},
+  {id: 24},
+  {id: 25},
+  {id: 26},
+  {id: 27},
+  {id: 28},
+  {id: 29},
+  {id: 30},
+  {id: 31},
+  {id: 32},
+  {id: 33},
+  {id: 34},
+  {id: 35},
+  {id: 36},
+  {id: 37},
+  {id: 38},
+  {id: 39},
+  {id: 40},
+  {id: 41},
+  {id: 42},
+  {id: 43},
+  {id: 44},
+  {id: 45},
+  {id: 46},
+  {id: 47},
+  {id: 48},
+  {id: 49},
+  {id: 50},
+  {id: 51},
+  {id: 52},
+  {id: 53},
+  {id: 54},
+  {id: 55},
+  {id: 56},
+  {id: 57},
+  {id: 58},
+  {id: 59},
+  {id: 60},
+  {id: 61},
+  {id: 62},
+  {id: 63},
+  {id: 64},
+  {id: 65},
+  {id: 66},
+  {id: 67},
+  {id: 68},
+  {id: 69},
+  {id: 70},
+  {id: 71},
+  {id: 72},
+  {id: 73},
+  {id: 74},
+  {id: 75},
+  {id: 76},
+  {id: 77},
+  {id: 78},
+  {id: 79},
+  {id: 80},
+]
+
+const MMLEVEL8 = [
+  {id: 0},
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+  {id: 11},
+  {id: 12},
+  {id: 13},
+  {id: 14},
+  {id: 15},
+  {id: 16},
+  {id: 17},
+  {id: 18},
+  {id: 19},
+  {id: 20},
+  {id: 21},
+  {id: 22},
+  {id: 23},
+  {id: 24},
+  {id: 25},
+  {id: 26},
+  {id: 27},
+  {id: 28},
+  {id: 29},
+  {id: 30},
+  {id: 31},
+  {id: 32},
+  {id: 33},
+  {id: 34},
+  {id: 35},
+  {id: 36},
+  {id: 37},
+  {id: 38},
+  {id: 39},
+  {id: 40},
+  {id: 41},
+  {id: 42},
+  {id: 43},
+  {id: 44},
+  {id: 45},
+  {id: 46},
+  {id: 47},
+  {id: 48},
+  {id: 49},
+  {id: 50},
+  {id: 51},
+  {id: 52},
+  {id: 53},
+  {id: 54},
+  {id: 55},
+  {id: 56},
+  {id: 57},
+  {id: 58},
+  {id: 59},
+  {id: 60},
+  {id: 61},
+  {id: 62},
+  {id: 63},
+  {id: 64},
+  {id: 65},
+  {id: 66},
+  {id: 67},
+  {id: 68},
+  {id: 69},
+  {id: 70},
+  {id: 71},
+  {id: 72},
+  {id: 73},
+  {id: 74},
+  {id: 75},
+  {id: 76},
+  {id: 77},
+  {id: 78},
+  {id: 79},
+  {id: 80},
+  {id: 81},
+  {id: 82},
+  {id: 83},
+  {id: 84},
+  {id: 85},
+  {id: 86},
+  {id: 87},
+  {id: 88},
+  {id: 89},
+  {id: 90},
+  {id: 91},
+  {id: 92},
+  {id: 93},
+  {id: 94},
+  {id: 95},
+  {id: 96},
+  {id: 97},
+  {id: 98},
+  {id: 99},
+]
+
+const MMLEVEL9 = [
+  {id: 0},
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+  {id: 11},
+  {id: 12},
+  {id: 13},
+  {id: 14},
+  {id: 15},
+  {id: 16},
+  {id: 17},
+  {id: 18},
+  {id: 19},
+  {id: 20},
+  {id: 21},
+  {id: 22},
+  {id: 23},
+  {id: 24},
+  {id: 25},
+  {id: 26},
+  {id: 27},
+  {id: 28},
+  {id: 29},
+  {id: 30},
+  {id: 31},
+  {id: 32},
+  {id: 33},
+  {id: 34},
+  {id: 35},
+  {id: 36},
+  {id: 37},
+  {id: 38},
+  {id: 39},
+  {id: 40},
+  {id: 41},
+  {id: 42},
+  {id: 43},
+  {id: 44},
+  {id: 45},
+  {id: 46},
+  {id: 47},
+  {id: 48},
+  {id: 49},
+  {id: 50},
+  {id: 51},
+  {id: 52},
+  {id: 53},
+  {id: 54},
+  {id: 55},
+  {id: 56},
+  {id: 57},
+  {id: 58},
+  {id: 59},
+  {id: 60},
+  {id: 61},
+  {id: 62},
+  {id: 63},
+  {id: 64},
+  {id: 65},
+  {id: 66},
+  {id: 67},
+  {id: 68},
+  {id: 69},
+  {id: 70},
+  {id: 71},
+  {id: 72},
+  {id: 73},
+  {id: 74},
+  {id: 75},
+  {id: 76},
+  {id: 77},
+  {id: 78},
+  {id: 79},
+  {id: 80},
+  {id: 81},
+  {id: 82},
+  {id: 83},
+  {id: 84},
+  {id: 85},
+  {id: 86},
+  {id: 87},
+  {id: 88},
+  {id: 89},
+  {id: 90},
+  {id: 91},
+  {id: 92},
+  {id: 93},
+  {id: 94},
+  {id: 95},
+  {id: 96},
+  {id: 97},
+  {id: 98},
+  {id: 99},
+  {id: 100},
+  {id: 101},
+  {id: 102},
+  {id: 103},
+  {id: 104},
+  {id: 105},
+  {id: 106},
+  {id: 107},
+  {id: 108},
+  {id: 109},
+  {id: 110},
+  {id: 111},
+  {id: 112},
+  {id: 113},
+  {id: 114},
+  {id: 115},
+  {id: 116},
+  {id: 117},
+  {id: 118},
+  {id: 119},
+  {id: 120},
+]
+
+const MMLEVEL10 = [
+  {id: 0},
+  {id: 1},
+  {id: 2},
+  {id: 3},
+  {id: 4},
+  {id: 5},
+  {id: 6},
+  {id: 7},
+  {id: 8},
+  {id: 9},
+  {id: 10},
+  {id: 11},
+  {id: 12},
+  {id: 13},
+  {id: 14},
+  {id: 15},
+  {id: 16},
+  {id: 17},
+  {id: 18},
+  {id: 19},
+  {id: 20},
+  {id: 21},
+  {id: 22},
+  {id: 23},
+  {id: 24},
+  {id: 25},
+  {id: 26},
+  {id: 27},
+  {id: 28},
+  {id: 29},
+  {id: 30},
+  {id: 31},
+  {id: 32},
+  {id: 33},
+  {id: 34},
+  {id: 35},
+  {id: 36},
+  {id: 37},
+  {id: 38},
+  {id: 39},
+  {id: 40},
+  {id: 41},
+  {id: 42},
+  {id: 43},
+  {id: 44},
+  {id: 45},
+  {id: 46},
+  {id: 47},
+  {id: 48},
+  {id: 49},
+  {id: 50},
+  {id: 51},
+  {id: 52},
+  {id: 53},
+  {id: 54},
+  {id: 55},
+  {id: 56},
+  {id: 57},
+  {id: 58},
+  {id: 59},
+  {id: 60},
+  {id: 61},
+  {id: 62},
+  {id: 63},
+  {id: 64},
+  {id: 65},
+  {id: 66},
+  {id: 67},
+  {id: 68},
+  {id: 69},
+  {id: 70},
+  {id: 71},
+  {id: 72},
+  {id: 73},
+  {id: 74},
+  {id: 75},
+  {id: 76},
+  {id: 77},
+  {id: 78},
+  {id: 79},
+  {id: 80},
+  {id: 81},
+  {id: 82},
+  {id: 83},
+  {id: 84},
+  {id: 85},
+  {id: 86},
+  {id: 87},
+  {id: 88},
+  {id: 89},
+  {id: 90},
+  {id: 91},
+  {id: 92},
+  {id: 93},
+  {id: 94},
+  {id: 95},
+  {id: 96},
+  {id: 97},
+  {id: 98},
+  {id: 99},
+  {id: 100},
+  {id: 101},
+  {id: 102},
+  {id: 103},
+  {id: 104},
+  {id: 105},
+  {id: 106},
+  {id: 107},
+  {id: 108},
+  {id: 109},
+  {id: 110},
+  {id: 111},
+  {id: 112},
+  {id: 113},
+  {id: 114},
+  {id: 115},
+  {id: 116},
+  {id: 117},
+  {id: 118},
+  {id: 119},
+  {id: 120},
+  {id: 121},
+  {id: 122},
+  {id: 123},
+  {id: 124},
+  {id: 125},
+  {id: 126},
+  {id: 127},
+  {id: 128},
+  {id: 129},
+  {id: 130},
+  {id: 131},
+  {id: 132},
+  {id: 133},
+  {id: 134},
+  {id: 135},
+  {id: 136},
+  {id: 137},
+  {id: 138},
+  {id: 139},
+  {id: 140},
+  {id: 141},
+  {id: 142},
+  {id: 143},
+]
+
 const MMLevelListItems = props => {
   const {
     item,
@@ -353,6 +878,66 @@ class MatrixGame extends Component {
         }
       }
       this.setState({randomBoxes: randomValues})
+    } else if (level === 6) {
+      const randomValues = []
+      let value
+      let isPresent
+      for (let i = 1; i < 64; i = i + 1) {
+        value = Math.floor(Math.random() * 64)
+        isPresent = randomValues.includes(value)
+        if (isPresent === false && randomValues.length < 8) {
+          randomValues.push(value)
+        }
+      }
+      this.setState({randomBoxes: randomValues})
+    } else if (level === 7) {
+      const randomValues = []
+      let value
+      let isPresent
+      for (let i = 1; i < 81; i = i + 1) {
+        value = Math.floor(Math.random() * 81)
+        isPresent = randomValues.includes(value)
+        if (isPresent === false && randomValues.length < 9) {
+          randomValues.push(value)
+        }
+      }
+      this.setState({randomBoxes: randomValues})
+    } else if (level === 8) {
+      const randomValues = []
+      let value
+      let isPresent
+      for (let i = 1; i < 100; i = i + 1) {
+        value = Math.floor(Math.random() * 100)
+        isPresent = randomValues.includes(value)
+        if (isPresent === false && randomValues.length < 10) {
+          randomValues.push(value)
+        }
+      }
+      this.setState({randomBoxes: randomValues})
+    } else if (level === 9) {
+      const randomValues = []
+      let value
+      let isPresent
+      for (let i = 1; i < 121; i = i + 1) {
+        value = Math.floor(Math.random() * 121)
+        isPresent = randomValues.includes(value)
+        if (isPresent === false && randomValues.length < 11) {
+          randomValues.push(value)
+        }
+      }
+      this.setState({randomBoxes: randomValues})
+    } else if (level === 10) {
+      const randomValues = []
+      let value
+      let isPresent
+      for (let i = 1; i < 144; i = i + 1) {
+        value = Math.floor(Math.random() * 144)
+        isPresent = randomValues.includes(value)
+        if (isPresent === false && randomValues.length < 12) {
+          randomValues.push(value)
+        }
+      }
+      this.setState({randomBoxes: randomValues})
     }
   }
 
@@ -385,8 +970,13 @@ class MatrixGame extends Component {
       this.setState(prevState => ({
         wrongClick: [...prevState.wrongClick, id],
         CorrectChoice: false,
-        Result: true,
       }))
+      this.timer = setTimeout(() => {
+        this.setState(prevState => ({
+          Result: true,
+        }))
+        clearTimeout(this.timer)
+      }, 1000)
     } else {
       const countOfBox = choosedBoxes.filter(each => each === id)
       const FinalCount = countOfBox.length
@@ -429,29 +1019,54 @@ class MatrixGame extends Component {
     let ListItemWidth
     if (level === 1) {
       LEVELS = MMLEVEL1
-      progress = 20
+      progress = 10
       ListItemWidth = 'MMListItemBox-level1'
       UnorderedListBackground = 'MMUnorderedBox-level1'
     } else if (level === 2) {
       LEVELS = MMLEVEL2
-      progress = 40
+      progress = 20
       ListItemWidth = 'MMListItemBox-level2'
       UnorderedListBackground = 'MMUnorderedBox-level2'
     } else if (level === 3) {
       LEVELS = MMLEVEL3
-      progress = 60
+      progress = 30
       ListItemWidth = 'MMListItemBox-level3'
       UnorderedListBackground = 'MMUnorderedBox-level3'
     } else if (level === 4) {
       LEVELS = MMLEVEL4
-      progress = 80
+      progress = 40
       ListItemWidth = 'MMListItemBox-level4'
       UnorderedListBackground = 'MMUnorderedBox-level4'
     } else if (level === 5) {
       LEVELS = MMLEVEL5
-      progress = 100
+      progress = 50
       ListItemWidth = 'MMListItemBox-level5'
       UnorderedListBackground = 'MMUnorderedBox-level5'
+    } else if (level === 6) {
+      LEVELS = MMLEVEL6
+      progress = 60
+      ListItemWidth = 'MMListItemBox-level6'
+      UnorderedListBackground = 'MMUnorderedBox-level6'
+    } else if (level === 7) {
+      LEVELS = MMLEVEL7
+      progress = 70
+      ListItemWidth = 'MMListItemBox-level7'
+      UnorderedListBackground = 'MMUnorderedBox-level7'
+    } else if (level === 8) {
+      LEVELS = MMLEVEL8
+      progress = 80
+      ListItemWidth = 'MMListItemBox-level8'
+      UnorderedListBackground = 'MMUnorderedBox-level8'
+    } else if (level === 9) {
+      LEVELS = MMLEVEL9
+      progress = 90
+      ListItemWidth = 'MMListItemBox-level9'
+      UnorderedListBackground = 'MMUnorderedBox-level9'
+    } else if (level === 10) {
+      LEVELS = MMLEVEL10
+      progress = 100
+      ListItemWidth = 'MMListItemBox-level10'
+      UnorderedListBackground = 'MMUnorderedBox-level10'
     }
     return Result ? (
       <div className="MMGameResultContainer">
@@ -462,6 +1077,14 @@ class MatrixGame extends Component {
         </ul>
         <Line
           percent={progress}
+          strokeWidth={5}
+          strokeColor="#0320fc"
+          trailWidth={5}
+          trailColor="#D3D3D3"
+          className="ProgressBarSmallDevices"
+        />
+        <Line
+          percent={progress}
           strokeWidth={1}
           strokeColor="#0320fc"
           trailWidth={1}
@@ -469,11 +1092,11 @@ class MatrixGame extends Component {
           className="ProgressBar"
         />
         <ul className="MMGameResultUnorderedList">
-          <li className="MMResultLevel">Level 1</li>
           <li className="MMResultLevel">Level 2</li>
-          <li className="MMResultLevel">Level 3</li>
           <li className="MMResultLevel">Level 4</li>
-          <li className="MMResultLevel">Level 5</li>
+          <li className="MMResultLevel">Level 6</li>
+          <li className="MMResultLevel">Level 8</li>
+          <li className="MMResultLevel">Level 10</li>
         </ul>
         <h1 className="MMResultCongratsHeading">Congratulation!</h1>
         <p className="MMResultPara">You have reached level {level}</p>

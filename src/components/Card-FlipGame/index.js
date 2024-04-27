@@ -471,6 +471,12 @@ class CardFlipGame extends Component {
           </div>
         </div>
         <h1 className="CardFlipGameHeading">Card-Flip Memory Game</h1>
+        <p className="CardFlipTimerSmallDevices">
+          Timer-
+          <span>
+            0{TimerMin}:{TimerSec}
+          </span>
+        </p>
         <div className="CardFlipScoreContainer">
           <p className="CardFlipCount">Card flip count-{FlipCount}</p>
           <p className="CardFlipTimer">

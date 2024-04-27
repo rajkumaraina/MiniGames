@@ -49,6 +49,11 @@
   width: 45%;
 }
 
+@media (max-width: 576px) {
+  .MMListItem {
+    width: 100%;
+  }
+}
 .RpsSpanElement {
   color: yellow;
 }
