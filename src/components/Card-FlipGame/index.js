@@ -2,9 +2,11 @@ import {Component} from 'react'
 
 import Popup from 'reactjs-popup'
 
-import {MdClose} from 'react-icons/md'
+import {CgClose} from 'react-icons/cg'
 
 import {RiCloseLine} from 'react-icons/ri'
+
+import {BiArrowBack} from 'react-icons/bi'
 
 import './index.css'
 
@@ -335,7 +337,6 @@ class CardFlipGame extends Component {
       Win,
     } = this.state
     let {TimerSec, FlipCount, Score, lowestFlipCount} = this.state
-    console.log(Result, Win)
     if (TimerSec === 60) {
       TimerSec = `00`
     } else if (TimerSec < 10) {
@@ -408,11 +409,7 @@ class CardFlipGame extends Component {
               onClick={this.BackButtonClicked}
               type="button"
             >
-              <img
-                src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711193532/arrow-left_1_cqzsv4.png"
-                className="BackIcon"
-                alt="backIcon"
-              />
+              <BiArrowBack className="BackIcon white" />
               <p className="backpara white">Back</p>
             </button>
             <div className="popup-container">
@@ -430,11 +427,12 @@ class CardFlipGame extends Component {
                       <div className="closeContainer">
                         <button
                           type="button"
+                          data-testid="close"
                           className="closeButton"
                           onClick={() => close()}
                         >
                           {' '}
-                          <MdClose />
+                          <CgClose />
                         </button>
                       </div>
                       <h1 className="rulesHeading blackcolor">Rules</h1>

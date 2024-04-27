@@ -4,7 +4,9 @@ import Popup from 'reactjs-popup'
 
 import 'reactjs-popup/dist/index.css'
 
-import {MdClose} from 'react-icons/md'
+import {BiArrowBack} from 'react-icons/bi'
+
+import {CgClose} from 'react-icons/cg'
 
 import {WinNavbarItem, LooseNavbarItem} from '../EmojiNavBar'
 
@@ -210,11 +212,7 @@ class EmojiGame extends Component {
               onClick={this.BackButtonClicked}
               type="button"
             >
-              <img
-                src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711019747/arrow-left_p58uae.svg"
-                className="BackIcon"
-                alt="backIcon"
-              />
+              <BiArrowBack className="BackIcon" />
               <p className="backpara">Back</p>
             </button>
             <div className="popup-container">
@@ -232,11 +230,12 @@ class EmojiGame extends Component {
                       <div className="closeContainer">
                         <button
                           type="button"
+                          data-testid="close"
                           className="closeButton"
                           onClick={() => close()}
                         >
                           {' '}
-                          <MdClose />
+                          <CgClose />
                         </button>
                       </div>
                       <h1 className="rulesHeading">Rules</h1>

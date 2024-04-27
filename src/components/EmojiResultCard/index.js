@@ -22,7 +22,7 @@ const Win = props => {
       </div>
       <img
         src="https://assets.ccbp.in/frontend/react-js/won-game-img.png"
-        alt="win or lose"
+        alt="won"
         className="resultImg"
       />
     </div>
@@ -51,7 +51,7 @@ const Loose = props => {
       </div>
       <img
         src="https://assets.ccbp.in/frontend/react-js/lose-game-img.png"
-        alt="win or lose"
+        alt="lose"
         className="resultImg"
       />
     </div>

@@ -113,13 +113,13 @@ const choicesList = [
 const App = () => (
   <Switch>
     <Route exact path="/" component={HomePage} />
-    <Route exact path="/EmojiRules" component={EmojiRules} />
+    <Route exact path="/emoji-game" component={EmojiRules} />
     <Route exact path="/EmojiGame" component={EmojiGame} />
-    <Route exact path="/RockPaperScissorRules" component={RPSRules} />
+    <Route exact path="/rock-paper-scissor" component={RPSRules} />
     <Route exact path="/RockPaperScissor" component={RPSGame} />
-    <Route exact path="/MMRules" component={MMRules} />
+    <Route exact path="/memory-matrix" component={MMRules} />
     <Route exact path="/MemoryMatrix" component={MatrixGame} />
-    <Route exact path="/CardFlipRules" component={CardFlipRules} />
+    <Route exact path="/card-flip-memory-game" component={CardFlipRules} />
     <Route exact path="/CardFlipGame" component={CardFlipGame} />
   </Switch>
 )

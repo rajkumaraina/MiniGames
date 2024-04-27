@@ -4,7 +4,9 @@ import {Line} from 'rc-progress'
 
 import Popup from 'reactjs-popup'
 
-import {MdClose} from 'react-icons/md'
+import {BiArrowBack} from 'react-icons/bi'
+
+import {CgClose} from 'react-icons/cg'
 
 import {RiCloseLine} from 'react-icons/ri'
 
@@ -1134,11 +1136,7 @@ class MatrixGame extends Component {
               onClick={this.BackButtonClicked}
               type="button"
             >
-              <img
-                src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711193532/arrow-left_1_cqzsv4.png"
-                className="BackIcon"
-                alt="backIcon"
-              />
+              <BiArrowBack className="BackIcon white" />
               <p className="backpara white">Back</p>
             </button>
             <div className="popup-container">
@@ -1156,11 +1154,12 @@ class MatrixGame extends Component {
                       <div className="closeContainer">
                         <button
                           type="button"
+                          data-testid="close"
                           className="closeButton"
                           onClick={() => close()}
                         >
                           {' '}
-                          <MdClose />
+                          <CgClose />
                         </button>
                       </div>
                       <h1 className="rulesHeading blackcolor">Rules</h1>

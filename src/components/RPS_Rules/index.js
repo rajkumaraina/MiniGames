@@ -1,3 +1,5 @@
+import {BiArrowBack} from 'react-icons/bi'
+
 import './index.css'
 
 const RPSRules = props => {
@@ -17,11 +19,7 @@ const RPSRules = props => {
             onClick={BackButtonClicked}
             type="button"
           >
-            <img
-              src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711193532/arrow-left_1_cqzsv4.png"
-              className="BackIcon"
-              alt="backIcon"
-            />
+            <BiArrowBack className="BackIcon white" />
             <p className="backpara white">Back</p>
           </button>
         </div>

@@ -1,5 +1,7 @@
 import './index.css'
 
+import {BiArrowBack} from 'react-icons/bi'
+
 const CardFlipRules = props => {
   const {history} = props
   const BackButtonClicked = () => {
@@ -17,11 +19,7 @@ const CardFlipRules = props => {
             onClick={BackButtonClicked}
             type="button"
           >
-            <img
-              src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711193532/arrow-left_1_cqzsv4.png"
-              className="BackIcon"
-              alt="backIcon"
-            />
+            <BiArrowBack className="BackIcon white" />
             <p className="backpara white">Back</p>
           </button>
         </div>

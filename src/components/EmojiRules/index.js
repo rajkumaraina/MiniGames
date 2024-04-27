@@ -1,3 +1,5 @@
+import {BiArrowBack} from 'react-icons/bi'
+
 import './index.css'
 
 const EmojiRules = props => {
@@ -17,11 +19,7 @@ const EmojiRules = props => {
             onClick={BackButtonClicked}
             type="button"
           >
-            <img
-              src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711019747/arrow-left_p58uae.svg"
-              className="BackIcon"
-              alt="backIcon"
-            />
+            <BiArrowBack className="BackIcon" />
             <p className="backpara">Back</p>
           </button>
         </div>
@@ -32,7 +30,7 @@ const EmojiRules = props => {
             <img
               src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711105908/Group_7428_jpd5vz.png"
               className="InitialEmojiRulesImage"
-              alt="EmojiGame"
+              alt="emoji game"
             />
           </div>
           <div className="InitialRulesSecondContainer">
