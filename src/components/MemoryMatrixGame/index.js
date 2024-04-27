@@ -774,8 +774,14 @@ const MMLevelListItems = props => {
   const boxClicked = () => {
     SelectedBox(id)
   }
+  const boxAlt = randomBoxes.includes(id) ? 'highlighted' : 'notHighlighted'
+  console.log(`${id}-${boxAlt}`)
   return timeUp ? (
-    <li className={`${FinalBackground}`} onClick={boxClicked}>
+    <li
+      className={`${FinalBackground}`}
+      onClick={boxClicked}
+      data-testid={boxAlt}
+    >
       <button type="button" className="MMBoxButton">
         {' '}
       </button>

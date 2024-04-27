@@ -148,6 +148,7 @@ const CardFlip = props => {
   const ParticularItem = cardsData.find(each => each.id === id)
   let CardBackground = wrongIds.includes(id)
   let ImageElement
+  let imageAlt
   if (CardBackground) {
     CardBackground = 'WrongChoice'
   }
@@ -163,6 +164,7 @@ const CardFlip = props => {
   }
   if (correctlySelected.includes(ParticularItem)) {
     ImageElement = image
+    imageAlt = name
   } else {
     let SameId = false
     const selectedIdPresent = selectedId.includes(id)
@@ -171,21 +173,27 @@ const CardFlip = props => {
     }
     if (SameId) {
       ImageElement = image
+      imageAlt = name
     } else {
       ImageElement =
         'https://res.cloudinary.com/dktgcdgar/image/upload/v1713775574/foot-print_1_v2i0ik.png'
+      imageAlt = 'footprint'
     }
   }
   if (correctlySelected.includes(ParticularItem)) {
     CardBackground = 'CorrectChoice'
   }
   return NoAction ? (
-    <li className={`CardsListItem ${CardBackground}`}>
-      <img src={ImageElement} className="FootPrintImg" alt="animalImg" />
+    <li className={`CardsListItem ${CardBackground}`} data-testid={name}>
+      <img src={ImageElement} className="FootPrintImg" alt={imageAlt} />
     </li>
   ) : (
-    <li className={`CardsListItem ${CardBackground}`} onClick={Clicked}>
-      <img src={ImageElement} className="FootPrintImg" alt="animalImg" />
+    <li
+      className={`CardsListItem ${CardBackground}`}
+      onClick={Clicked}
+      data-testid={name}
+    >
+      <img src={ImageElement} className="FootPrintImg" alt={imageAlt} />
     </li>
   )
 }
@@ -358,7 +366,7 @@ class CardFlipGame extends Component {
           <img
             src="https://res.cloudinary.com/dktgcdgar/image/upload/v1713614304/grinning-face-with-big-eyes_1f603_ytzhjq.png"
             className="CardFlipResultEmoji"
-            alt="emoji"
+            alt="grinning face with big eyes"
           />
           <h1 className="CardFlipResultCongrats">Congratulations!</h1>
           <p className="CardFlipResultPara">No.of Flips-{FlipCount}</p>
@@ -380,7 +388,7 @@ class CardFlipGame extends Component {
           <img
             src="https://res.cloudinary.com/dktgcdgar/image/upload/v1713612175/neutral-face_1f610_nfcmnd.png"
             className="CardFlipResultEmoji"
-            alt="emoji"
+            alt="neutral face"
           />
           <h1 className="CardFlipResultCongrats">Better luck next time!</h1>
           <p className="CardFlipResultPara">No.of Flips-{FlipCount}</p>

@@ -98,6 +98,7 @@ class EmojiGame extends Component {
     result: false,
     won: false,
     scoreCard: 0,
+    rules: true,
   }
 
   startGame = () => {
@@ -105,6 +106,7 @@ class EmojiGame extends Component {
       emojiClicked: [],
       result: false,
       won: false,
+      rules: false,
     })
   }
 
@@ -162,7 +164,15 @@ class EmojiGame extends Component {
   }
 
   render() {
-    const {emojisList, count, topScore, result, won, scoreCard} = this.state
+    const {
+      emojisList,
+      count,
+      topScore,
+      result,
+      rules,
+      won,
+      scoreCard,
+    } = this.state
     const scoreBoard = {SCORE: count, TOPSCORE: topScore}
     let resultCard
     if (result === true) {
@@ -202,7 +212,71 @@ class EmojiGame extends Component {
         <LooseNavbarItem scoreBoard={scoreBoard} startGame={this.startGame} />
       )
     }
-    return (
+    return rules ? (
+      <div className="EmojiRulesMainContainer">
+        <div className="EmojiHomeBack ">
+          <div className="rulesBackWidth">
+            <button
+              className="BackButton"
+              onClick={this.BackButtonClicked}
+              type="button"
+            >
+              <BiArrowBack className="BackIcon" />
+              <p className="backpara">Back</p>
+            </button>
+          </div>
+        </div>
+        <div className="initialRules">
+          <div className="InitialRulesContainer">
+            <div className="InitialRulesFirstContainer">
+              <img
+                src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711105908/Group_7428_jpd5vz.png"
+                className="InitialEmojiRulesImage"
+                alt="emoji game"
+              />
+            </div>
+            <div className="InitialRulesSecondContainer">
+              <h1 className="InitialRulesHeading">Rules</h1>
+              <ul className="emojigameUnorderedList">
+                <li className="InitialrulesListItem">
+                  User should able to see the lists of Emojis
+                </li>
+                <li className="InitialrulesListItem">
+                  When the user clicks any of the Emoji for the first time, then
+                  the count of the score should be incremented by 1 and the List
+                  of emoji cards should be shuffled.
+                </li>
+                <li className="InitialrulesListItem">
+                  This process should be repeated every time the user clicks on
+                  an emoji card
+                </li>
+                <li className="InitialrulesListItem">
+                  When the user clicks on all Emoji cards without clicking any
+                  of it twice, then the user will win the game
+                </li>
+                <li className="InitialrulesListItem">
+                  When the user clicks on the same Emoji for the second time,
+                  then the user will lose the game.
+                </li>
+                <li className="InitialrulesListItem">
+                  Once the game is over, the user will be redirected to the
+                  results page.
+                </li>
+              </ul>
+              <div className="InitialRulesPlayContainer">
+                <button
+                  className="EmojiStartPlayingButton"
+                  type="button"
+                  onClick={this.startGame}
+                >
+                  Start Playing
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ) : (
       <div className="EmojiGameMainContainer">
         {NavbarToDisplay}
         <div className="EmojiHomeBack">

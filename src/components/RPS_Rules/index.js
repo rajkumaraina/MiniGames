@@ -29,7 +29,7 @@ const RPSRules = props => {
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711193814/Group_7469_knno7c.png"
           className="RPSRulesImage"
-          alt="RPS Rules"
+          alt="rock paper scissor"
         />
       </div>
       <h1 className="RPSRulesName white">Rules</h1>

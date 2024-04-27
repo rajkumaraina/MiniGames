@@ -12,23 +12,6 @@ import GameResultView from '../RPSGameResultView'
 
 import './index.css'
 
-import {
-  Container,
-  ScoreContainer,
-  Heading,
-  Score,
-  ScorePara,
-  PlayingView,
-  PopUpContainer,
-  RulesImg,
-  RulesButton,
-  RulesContainer,
-  ScoreValueContainer,
-  EachItem,
-  ImageElement,
-  CloseButton,
-} from './styledComponents'
-
 const choicesList = [
   {
     id: 'ROCK',
@@ -51,15 +34,19 @@ const EachGameItem = props => {
   const {item, clicked} = props
   const {id, imageUrl} = item
   let value
+  let altvalue
   switch (id) {
     case 'ROCK':
       value = 'rockButton'
+      altvalue = 'rock'
       break
     case 'SCISSORS':
       value = 'scissorsButton'
+      altvalue = 'scissor'
       break
     case 'PAPER':
       value = 'paperButton'
+      altvalue = 'paper'
       break
     default:
       break
@@ -70,9 +57,14 @@ const EachGameItem = props => {
     console.log(value)
   }
   return (
-    <EachItem data-testid={value} type="button" onClick={onClicked}>
-      <ImageElement src={imageUrl} alt={id} />
-    </EachItem>
+    <button
+      className="EachItem"
+      data-testid={value}
+      type="button"
+      onClick={onClicked}
+    >
+      <img className="ImageElement" src={imageUrl} alt={altvalue} />
+    </button>
   )
 }
 
@@ -187,7 +179,7 @@ class RPSGame extends Component {
       ScoreEmoji = (
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711203969/Group_7618_narfpl.png"
-          alt="emoji"
+          alt="won emoji"
           className="rpsResultEmoji"
         />
       )
@@ -195,7 +187,7 @@ class RPSGame extends Component {
       ScoreEmoji = (
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711203969/Group_7618_1_uyj3zc.png"
-          alt="emoji"
+          alt="lose emoji"
           className="rpsResultEmoji"
         />
       )
@@ -203,7 +195,7 @@ class RPSGame extends Component {
       ScoreEmoji = (
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1711205747/Group_7618_2_nd29qg.png"
-          alt="emoji"
+          alt="draw emoji"
           className="rpsResultEmoji"
         />
       )
@@ -218,7 +210,7 @@ class RPSGame extends Component {
     }
 
     return (
-      <Container>
+      <div className="rpsMainContainer">
         <div className="EmojiHomeBack">
           <div className="EmojiBackIconContainer">
             <button
@@ -350,18 +342,20 @@ class RPSGame extends Component {
           </div>
         </div>
 
-        <ScoreContainer>
+        <div className="rpsscoreContainer">
           <div>
-            <Heading>Rock Paper Scissors</Heading>
+            <h1 className="rpsheading">Rock Paper Scissors</h1>
           </div>
           <div className="rpsScoreContainerEmojiAndScore">
             {ScoreEmoji}
-            <ScoreValueContainer>
-              <ScorePara inside>Score</ScorePara>
-              <Score>{score}</Score>
-            </ScoreValueContainer>
+            <div className="ScoreValueContainer">
+              <p className="ScorePara" inside>
+                Score
+              </p>
+              <p className="Score">{score}</p>
+            </div>
           </div>
-        </ScoreContainer>
+        </div>
         {itemClicked ? (
           <GameResultView
             selected={selected}
@@ -371,13 +365,13 @@ class RPSGame extends Component {
             playAgain={this.playAgain}
           />
         ) : (
-          <PlayingView>
+          <div className="PlayingView">
             {choicesList.map(each => (
               <EachGameItem item={each} key={each.id} clicked={this.clicked} />
             ))}
-          </PlayingView>
+          </div>
         )}
-      </Container>
+      </div>
     )
   }
 }

@@ -35,6 +35,11 @@
   align-items: center;
   width: 85%;
 }
+.ResultPara {
+  font-size: 25px;
+  color: #ffffff;
+  font-family: 'Bree-serif';
+}
 .rpsRulesHeading {
   margin: 0;
 }
@@ -95,7 +100,45 @@
   border-radius: 8px;
   width: 85%;
 }
+.ResultView {
+  width: 50%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.OneItem {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.Person {
+  font-family: 'Bree Serif';
+  margin: 3px;
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 28px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+.RPSPlayAgainButton {
+  width: 155px;
+  background-color: #ffffff;
+  padding: 12px;
+  font-family: 'Bree-serif';
+  border: 0 none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
 @media (max-width: 576px) {
+  .ResultView {
+    width: 80%;
+    margin-bottom: 80px;
+  }
   .cardsContainer {
     margin-top: 150px;
   }
@@ -120,6 +163,13 @@
   width: 100px;
   height: 100px;
 }
+.RPSResultContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+}
 @media (max-width: 576px) {
   .UnorderedList {
     width: 100%;
@@ -137,5 +187,94 @@
     overflow-y: auto;
     height: 80vh;
     margin-top: 0;
+  }
+}
+.rpsMainContainer {
+  height: 100vh;
+  background-color: #223a5f;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.rpsscoreContainer {
+  border: 1px solid #ffffff;
+  width: 80%;
+  height: 115px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 5px;
+}
+.rpsheading {
+  width: 40px;
+  font-family: 'Bree Serif';
+  margin: 3px;
+  font-size: 18px;
+  color: #ffffff;
+  margin-left: 35px;
+}
+.ScoreValueContainer {
+  background-color: #ffffff;
+  border-radius: 5px;
+  margin-right: 35px;
+  display: flex;
+  flex-direction: column;
+  width: 105px;
+  height: 85px;
+  align-items: center;
+}
+.ScorePara {
+  font-family: 'Bree Serif';
+  margin: 3px;
+  font-size: 18px;
+}
+.Score {
+  font-family: 'Roboto';
+  margin: 2px;
+  font-weight: bold;
+  margin-top: 8px;
+  font-size: 25px;
+}
+.PlayingView {
+  width: 35%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.EachItem {
+  border: 0 none;
+  cursor: pointer;
+  outline: none;
+  background-color: transparent;
+  margin: 12px;
+}
+.ImageElement {
+  width: 135px;
+  height: 135px;
+}
+@media (max-width: 576px) {
+  .rpsMainContainer {
+    height: 100vh;
+    justify-content: flex-start;
+  }
+  .rpsscoreContainer {
+    margin-top: 50px;
+    margin-bottom: 120px;
+    height: 250px;
+    flex-direction: column;
+  }
+  .rpsheading {
+    width: 100%;
+    font-size: 25px;
+  }
+  .PlayingView {
+    width: 100%;
+    margin-bottom: 80px;
+  }
+  .ImageElement {
+    width: 150px;
+    height: 150px;
   }
 }
