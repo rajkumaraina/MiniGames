@@ -8,8 +8,6 @@ import {BiArrowBack} from 'react-icons/bi'
 
 import {CgClose} from 'react-icons/cg'
 
-import {RiCloseLine} from 'react-icons/ri'
-
 import './index.css'
 
 const emojisArray = [

@@ -6,8 +6,6 @@ import {CgClose} from 'react-icons/cg'
 
 import {BiArrowBack} from 'react-icons/bi'
 
-import {RiCloseLine} from 'react-icons/ri'
-
 import GameResultView from '../RPSGameResultView'
 
 import './index.css'

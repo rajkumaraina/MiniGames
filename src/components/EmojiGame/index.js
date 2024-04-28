@@ -2,8 +2,6 @@ import {Component} from 'react'
 
 import Popup from 'reactjs-popup'
 
-import 'reactjs-popup/dist/index.css'
-
 import {BiArrowBack} from 'react-icons/bi'
 
 import {CgClose} from 'react-icons/cg'
