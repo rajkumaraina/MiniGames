@@ -772,7 +772,9 @@ const MMLevelListItems = props => {
   const boxClicked = () => {
     SelectedBox(id)
   }
+
   const boxAlt = randomBoxes.includes(id) ? 'highlighted' : 'notHighlighted'
+
   return timeUp ? (
     <li className={`${FinalBackground}`} onClick={boxClicked}>
       <button type="button" className="MMBoxButton" data-testid={boxAlt}>
@@ -791,15 +793,18 @@ const MMLevelListItems = props => {
 class MatrixGame extends Component {
   state = {
     randomBoxes: [],
+    levelBoxes: [],
     selectedBoxes: [],
     level: 1,
     maxlevel: 0,
+    VisibleTime: 3,
     hiddenBoxes: [],
     choosedBoxes: [],
     timeUp: false,
     wrongClick: [],
     CorrectChoice: false,
     Result: false,
+    countDown: false,
   }
 
   componentDidMount = () => {
@@ -807,22 +812,30 @@ class MatrixGame extends Component {
   }
 
   Random = () => {
-    const {level, maxlevel} = this.state
+    const {level, maxlevel, VisibleTime} = this.state
+    const countDownTimer = setTimeout(() => {
+      const {choosedBoxes, hiddenBoxes} = this.state
+      if (choosedBoxes.length < hiddenBoxes.length) {
+        this.setState({Result: true})
+      }
+      clearTimeout(countDownTimer)
+    }, `${VisibleTime + VisibleTime}000`)
     if (level > maxlevel) {
       this.setState({maxlevel: level})
     }
     let counter = 0
     const TimerId = setInterval(() => {
       counter += 1
-      if (counter === 3) {
+      if (counter === VisibleTime) {
         clearInterval(TimerId)
         this.setState(prevState => ({
           hiddenBoxes: prevState.randomBoxes,
           timeUp: true,
-          randomBoxes: [],
+          countDown: true,
         }))
       }
     }, 1000)
+
     if (level === 1) {
       const randomValues = []
       let value
@@ -962,9 +975,11 @@ class MatrixGame extends Component {
         hiddenBoxes: [],
         choosedBoxes: [],
         wrongClick: [],
+        VisibleTime: 3,
         CorrectChoice: false,
       },
       this.Random,
+      this.componentDidMount,
     )
   }
 
@@ -994,9 +1009,11 @@ class MatrixGame extends Component {
           this.setState(
             prevState => ({
               level: prevState.level + 1,
+              VisibleTime: prevState.VisibleTime + 1,
               choosedBoxes: [],
               hiddenBoxes: [],
               randomBoxes: [],
+              levelBoxes: [],
               timeUp: false,
             }),
             this.Random,
@@ -1027,7 +1044,7 @@ class MatrixGame extends Component {
     }
     if (level === 1) {
       LEVELS = MMLEVEL1
-      progress = 10
+      progress = 0
       ListItemWidth = 'MMListItemBox-level1'
       UnorderedListBackground = 'MMUnorderedBox-level1'
       LevelContainer = 'MMLevelMainContainer-level1'
@@ -1081,7 +1098,7 @@ class MatrixGame extends Component {
       LevelContainer = 'MMLevelMainContainer-level9'
     } else if (level === 10) {
       LEVELS = MMLEVEL10
-      progress = 100
+      progress = 60
       ListItemWidth = 'MMListItemBox-level10'
       UnorderedListBackground = 'MMUnorderedBox-level10'
       LevelContainer = 'MMLevelMainContainer-level10'
@@ -1110,14 +1127,21 @@ class MatrixGame extends Component {
           className="ProgressBar"
         />
         <ul className="MMGameResultUnorderedList">
-          <li className="MMResultLevel">Level 2</li>
-          <li className="MMResultLevel">Level 4</li>
-          <li className="MMResultLevel">Level 6</li>
-          <li className="MMResultLevel">Level 8</li>
-          <li className="MMResultLevel">Level 10</li>
+          <li className="MMResultLevel">
+            <p className="white">Level 1</p>
+          </li>
+          <li className="MMResultLevel">
+            <p className="white">Level 5</p>
+          </li>
+          <li className="MMResultLevel">
+            <p className="white">Level 10</p>
+          </li>
+          <li className="MMResultLevel">
+            <p className="white">Level 15</p>
+          </li>
         </ul>
         <h1 className="MMResultCongratsHeading">Congratulation!</h1>
-        <p className="MMResultPara">You have reached level {level}</p>
+        <p className="MMResultPara">You have reached level {level - 1}</p>
         <button
           className="MMResultButton"
           type="button"

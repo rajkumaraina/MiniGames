@@ -254,6 +254,9 @@
   width: 135px;
   height: 135px;
 }
+.rpsMainContainer {
+  height: 100%;
+}
 @media (max-width: 576px) {
   .rpsMainContainer {
     height: 100vh;

@@ -238,16 +238,19 @@ class RPSGame extends Component {
           </div>
         </div>
         {itemClicked ? (
-          <GameResultView
-            selected={selected}
-            random={random}
-            result={result}
-            emojiUrl={emojiUrl}
-            playAgain={this.playAgain}
-          />
+          <>
+            <h1 className="white">Rock Paper Scissor</h1>
+            <GameResultView
+              selected={selected}
+              random={random}
+              result={result}
+              emojiUrl={emojiUrl}
+              playAgain={this.playAgain}
+            />
+          </>
         ) : (
           <>
-            <h1>Let's pick</h1>
+            <h1 className="white">Let's pick</h1>
             <div className="PlayingView">
               {choicesList.map(each => (
                 <EachGameItem

@@ -304,8 +304,10 @@ class CardFlipGame extends Component {
   CardSelected = id => {
     const {selected} = this.state
     const reminder = selected.find(each => each.id === id)
-    if (reminder === undefined) {
+    if (selected.length > 0) {
       this.setState(prevState => ({FlipCount: prevState.FlipCount + 1}))
+    }
+    if (reminder === undefined) {
       if (selected.length === 0) {
         const SelectedItem = cardsData.find(each => each.id === id)
         this.setState(prevState => ({
@@ -367,10 +369,10 @@ class CardFlipGame extends Component {
             alt="grinning face with big eyes"
           />
           <h1 className="CardFlipResultCongrats">Congratulations!</h1>
-          <p className="CardFlipResultPara">No.of Flips-{FlipCount}</p>
-          <p className="CardFlipResultPara2">
+          <p className="CardFlipResultPara">No.of Flips - {FlipCount}</p>
+          <h1 className="CardFlipResultPara2">
             You matched all of the cards in record time
-          </p>
+          </h1>
           <button
             className="CardFlipPlayAgainButton"
             type="button"
@@ -388,11 +390,11 @@ class CardFlipGame extends Component {
             className="CardFlipResultEmoji"
             alt="neutral face"
           />
-          <h1 className="CardFlipResultCongrats">Better luck next time!</h1>
+          <h1 className="CardFlipResultCongrats">Better luck next time</h1>
           <p className="CardFlipResultPara">No.of Flips-{FlipCount}</p>
-          <p className="CardFlipResultPara2">
+          <h1 className="CardFlipResultPara2">
             You did not match all of the cards in record time
-          </p>
+          </h1>
           <button
             className="CardFlipPlayAgainButton"
             type="button"
