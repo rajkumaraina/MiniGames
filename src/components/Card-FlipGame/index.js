@@ -1,10 +1,10 @@
 import {Component} from 'react'
 
-import Popup from 'reactjs-popup'
-
 import {CgClose} from 'react-icons/cg'
 
 import {BiArrowBack} from 'react-icons/bi'
+
+import CardFlipRulesPopUp from '../Card-FlipModal'
 
 import './index.css'
 
@@ -418,69 +418,8 @@ class CardFlipGame extends Component {
               <BiArrowBack className="BackIcon white" />
               <p className="backpara white">Back</p>
             </button>
-            <div className="popup-container">
-              <Popup
-                modal
-                trigger={
-                  <button type="button" className="trigger-button">
-                    Rules
-                  </button>
-                }
-              >
-                {close => (
-                  <>
-                    <div className="rpsRulesScrollContainer">
-                      <div className="closeContainer">
-                        <button
-                          type="button"
-                          data-testid="close"
-                          className="closeButton"
-                          onClick={() => close()}
-                        >
-                          {' '}
-                          <CgClose />
-                        </button>
-                      </div>
-                      <h1 className="rulesHeading blackcolor">Rules</h1>
-                      <ul className="RpsUnorderedList">
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          When the game is started, the users should be able to
-                          see the list of Cards that are shuffled and turned
-                          face down.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          When a user starts the game, the user should be able
-                          to see the Timer running.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          The Timer starts from 2 Minutes.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          If the two cards have the same image, they remain face
-                          up. If not, they should be flipped face down again
-                          after a short 2 seconds.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          Users should be able to compare only two cards at a
-                          time.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          When the user is not able to find all the cards before
-                          the timer ends then the game should end and redirect
-                          to the Time Up Page.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          If the user finds all the matching cards before the
-                          timer ends, then the user should be redirected to the
-                          results page.
-                        </li>
-                      </ul>
-                    </div>
-                  </>
-                )}
-              </Popup>
-            </div>
           </div>
+          <CardFlipRulesPopUp />
         </div>
         <h1 className="CardFlipGameHeading">Card-Flip Memory Game</h1>
         <p className="CardFlipTimer">
@@ -497,8 +436,8 @@ class CardFlipGame extends Component {
           </p>
         </div>
         <div className="Containertwo">
-          <p className="CardFlipCount">Card flip count-{FlipCount}</p>
-          <p className="CardFlipScore">Score-{Score}</p>
+          <p className="CardFlipCount">Card flip count - {FlipCount}</p>
+          <p className="CardFlipScore">Score - {Score}</p>
         </div>
         <div className="CardFlipScoreContainer">
           <p className="CardFlipCount">Card flip count-{FlipCount}</p>

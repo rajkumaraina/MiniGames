@@ -2,11 +2,11 @@ import {Component} from 'react'
 
 import {Line} from 'rc-progress'
 
-import Popup from 'reactjs-popup'
-
 import {BiArrowBack} from 'react-icons/bi'
 
 import {CgClose} from 'react-icons/cg'
+
+import MemoryMatrixRulesPopUp from '../MMModel'
 
 import './index.css'
 
@@ -773,20 +773,15 @@ const MMLevelListItems = props => {
     SelectedBox(id)
   }
   const boxAlt = randomBoxes.includes(id) ? 'highlighted' : 'notHighlighted'
-  console.log(`${id}-${boxAlt}`)
   return timeUp ? (
-    <li
-      className={`${FinalBackground}`}
-      onClick={boxClicked}
-      data-testid={boxAlt}
-    >
-      <button type="button" className="MMBoxButton">
+    <li className={`${FinalBackground}`} onClick={boxClicked}>
+      <button type="button" className="MMBoxButton" data-testid={boxAlt}>
         {' '}
       </button>
     </li>
   ) : (
     <li className={`${MMBackGroundClassName}`}>
-      <button type="button" className="MMBoxButton">
+      <button type="button" className="MMBoxButton" data-testid={boxAlt}>
         {' '}
       </button>
     </li>
@@ -1143,76 +1138,13 @@ class MatrixGame extends Component {
               <BiArrowBack className="BackIcon white" />
               <p className="backpara white">Back</p>
             </button>
-            <div className="popup-container">
-              <Popup
-                modal
-                trigger={
-                  <button type="button" className="trigger-button">
-                    Rules
-                  </button>
-                }
-              >
-                {close => (
-                  <>
-                    <div className="rpsRulesScrollContainer">
-                      <div className="closeContainer">
-                        <button
-                          type="button"
-                          data-testid="close"
-                          className="closeButton"
-                          onClick={() => close()}
-                        >
-                          {' '}
-                          <CgClose />
-                        </button>
-                      </div>
-                      <h1 className="rulesHeading blackcolor">Rules</h1>
-                      <ul className="RpsUnorderedList">
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          In each level of the Game, Users should be able to see
-                          the Grid with (N X N) size starting from 3 and the
-                          grid will highlight N cells in Blue, the N highlighted
-                          cells will be picked randomly.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          The highlighted cells will remain N seconds for the
-                          user to memorize the cells. At this point, the user
-                          should not be able to perform any action.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          After N seconds, the grid will clear the N highlighted
-                          cells.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          At N seconds, the user can click on any cell. Clicking
-                          on a cell that was highlighted before it will turn
-                          blue. Clicking on the other cells that were not
-                          highlighted before then will turn to red.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          The user should be promoted to the next level if they
-                          guess all N cells correctly in one attempt.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          The user should be taken to the results page if the
-                          user clicks on the wrong cell.
-                        </li>
-                        <li className="MMListItem RPSRULESLIST blackcolor">
-                          If the user completed all the levels, then the user
-                          should be taken to the results page.
-                        </li>
-                      </ul>
-                    </div>
-                  </>
-                )}
-              </Popup>
-            </div>
           </div>
+          <MemoryMatrixRulesPopUp />
         </div>
         <h1 className="MMGameHeading">Memory Matrix</h1>
         <div className="MMLevelContainer">
           <div className={`${LevelContainer}`}>
-            <p className="MMLevel">Level {level}</p>
+            <p className="MMLevel">Level - {level}</p>
             <p className="MMMaxLevel">Max Level-{maxlevel}</p>
           </div>
 

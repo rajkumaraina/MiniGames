@@ -28,7 +28,7 @@ const CardFlipRules = props => {
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1713681999/animals_m6eudc.png"
           className="CardFlipRulesImage"
-          alt="RPS Rules"
+          alt="card flip memory game"
         />
       </div>
       <h1 className="RPSRulesName white">Rules</h1>

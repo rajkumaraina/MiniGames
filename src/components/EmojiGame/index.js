@@ -1,7 +1,5 @@
 import {Component} from 'react'
 
-import Popup from 'reactjs-popup'
-
 import {BiArrowBack} from 'react-icons/bi'
 
 import {CgClose} from 'react-icons/cg'
@@ -9,6 +7,8 @@ import {CgClose} from 'react-icons/cg'
 import {WinNavbarItem, LooseNavbarItem} from '../EmojiNavBar'
 
 import {Win, Loose} from '../EmojiResultCard'
+
+import EmojiRulesPopUp from '../EmojiModal'
 
 import './index.css'
 
@@ -234,6 +234,7 @@ class EmojiGame extends Component {
               />
             </div>
             <div className="InitialRulesSecondContainer">
+              <h1 className="InitialRulesHeading">Emoji Game</h1>
               <h1 className="InitialRulesHeading">Rules</h1>
               <ul className="emojigameUnorderedList">
                 <li className="InitialrulesListItem">
@@ -287,64 +288,8 @@ class EmojiGame extends Component {
               <BiArrowBack className="BackIcon" />
               <p className="backpara">Back</p>
             </button>
-            <div className="popup-container">
-              <Popup
-                modal
-                trigger={
-                  <button type="button" className="trigger-button-emoji">
-                    Rules
-                  </button>
-                }
-              >
-                {close => (
-                  <>
-                    <div>
-                      <div className="closeContainer">
-                        <button
-                          type="button"
-                          data-testid="close"
-                          className="closeButton"
-                          onClick={() => close()}
-                        >
-                          {' '}
-                          <CgClose />
-                        </button>
-                      </div>
-                      <h1 className="rulesHeading">Rules</h1>
-                      <ul className="rulesUnorderedList">
-                        <li className="rulesListItem">
-                          User should able to see the lists of Emojis
-                        </li>
-                        <li className="rulesListItem">
-                          When the user clicks any of the Emoji for the first
-                          time, then the count of the score should be
-                          incremented by 1 and the List of emoji cards should be
-                          shuffled.
-                        </li>
-                        <li className="rulesListItem">
-                          This process should be repeated every time the user
-                          clicks on an emoji card
-                        </li>
-                        <li className="rulesListItem">
-                          When the user clicks on all Emoji cards without
-                          clicking any of it twice, then the user will win the
-                          game
-                        </li>
-                        <li className="rulesListItem">
-                          When the user clicks on the same Emoji for the second
-                          time, then the user will lose the game.
-                        </li>
-                        <li className="rulesListItem">
-                          Once the game is over, the user will be redirected to
-                          the results page.
-                        </li>
-                      </ul>
-                    </div>
-                  </>
-                )}
-              </Popup>
-            </div>
           </div>
+          <EmojiRulesPopUp />
         </div>
 
         <div className="rContainer">{resultCard}</div>

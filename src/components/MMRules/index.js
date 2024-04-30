@@ -29,7 +29,7 @@ const MMRules = props => {
         <img
           src="https://res.cloudinary.com/dktgcdgar/image/upload/v1713680660/memory_n1oiwj.png"
           className="MMRulesImage"
-          alt="RPS Rules"
+          alt="memory matrix"
         />
       </div>
       <h1 className="RPSRulesName white">Rules</h1>

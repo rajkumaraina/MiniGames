@@ -1,12 +1,12 @@
 import {Component} from 'react'
 
-import Popup from 'reactjs-popup'
-
 import {CgClose} from 'react-icons/cg'
 
 import {BiArrowBack} from 'react-icons/bi'
 
 import GameResultView from '../RPSGameResultView'
+
+import RulesPopUp from '../RPSModal'
 
 import './index.css'
 
@@ -39,7 +39,7 @@ const EachGameItem = props => {
       altvalue = 'rock'
       break
     case 'SCISSORS':
-      value = 'scissorsButton'
+      value = 'scissorButton'
       altvalue = 'scissor'
       break
     case 'PAPER':
@@ -219,125 +219,8 @@ class RPSGame extends Component {
               <BiArrowBack className="BackIcon white" />
               <p className="backpara white">Back</p>
             </button>
-            <div className="popup-container">
-              <Popup
-                modal
-                trigger={
-                  <button type="button" className="trigger-button">
-                    Rules
-                  </button>
-                }
-              >
-                {close => (
-                  <>
-                    <div className="rpsRulesScrollContainer">
-                      <div className="closeContainer">
-                        <button
-                          type="button"
-                          data-testid="close"
-                          className="closeButton"
-                          onClick={() => close()}
-                        >
-                          {' '}
-                          <CgClose />
-                        </button>
-                      </div>
-                      <h1 className="rulesHeading white">Rules</h1>
-                      <ul className="RpsUnorderedList">
-                        <li className="RpsListItem RPSRULESLIST">
-                          The game result should be based on user and user
-                          opponent choices
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is rock and his opponent choice
-                          is scissors then the result will be{' '}
-                          <span className="RpsSpanElement orange">YOU WON</span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is rock and his opponent choice
-                          is rock then the result will be{' '}
-                          <span className="RpsSpanElement orange">
-                            IT IS DRAW{' '}
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is paper and his opponent choice
-                          is scissors then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU LOSE
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is paper and his opponent choice
-                          is rock then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU WON
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is scissors and his opponent
-                          choice is scissors then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            IT IS DRAW
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is a scissor and his opponent
-                          choice is rock then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU LOSE
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the result is{' '}
-                          <span className="RpsSpanElement orange">YOU WON</span>
-                          , then the count of the score should be incremented by
-                          1
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is paper and his opponent choice
-                          is paper then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            IT IS DRAW
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the result is{' '}
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            IT IS DRAW
-                          </span>
-                          , then the count of the score should be the same
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the user choice is scissors and his opponent
-                          choice is paper then the result will be
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU WON
-                          </span>
-                        </li>
-                        <li className="RpsListItem RPSRULESLIST">
-                          When the result is
-                          <span className="RpsSpanElement orange">
-                            {' '}
-                            YOU LOSE
-                          </span>
-                          , then the count of the score should be decremented by
-                          1.
-                        </li>
-                      </ul>
-                    </div>
-                  </>
-                )}
-              </Popup>
-            </div>
           </div>
+          <RulesPopUp />
         </div>
 
         <div className="rpsscoreContainer">
@@ -363,11 +246,18 @@ class RPSGame extends Component {
             playAgain={this.playAgain}
           />
         ) : (
-          <div className="PlayingView">
-            {choicesList.map(each => (
-              <EachGameItem item={each} key={each.id} clicked={this.clicked} />
-            ))}
-          </div>
+          <>
+            <h1>Let's pick</h1>
+            <div className="PlayingView">
+              {choicesList.map(each => (
+                <EachGameItem
+                  item={each}
+                  key={each.id}
+                  clicked={this.clicked}
+                />
+              ))}
+            </div>
+          </>
         )}
       </div>
     )
