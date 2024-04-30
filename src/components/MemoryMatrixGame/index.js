@@ -1092,7 +1092,7 @@ class MatrixGame extends Component {
       LevelContainer = 'MMLevelMainContainer-level8'
     } else if (level === 9) {
       LEVELS = MMLEVEL9
-      progress = 90
+      progress = 60
       ListItemWidth = 'MMListItemBox-level9'
       UnorderedListBackground = 'MMUnorderedBox-level9'
       LevelContainer = 'MMLevelMainContainer-level9'
