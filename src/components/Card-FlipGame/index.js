@@ -1,7 +1,5 @@
 import {Component} from 'react'
 
-import {CgClose} from 'react-icons/cg'
-
 import {BiArrowBack} from 'react-icons/bi'
 
 import CardFlipRulesPopUp from '../Card-FlipModal'
@@ -340,15 +338,19 @@ class CardFlipGame extends Component {
       correctlySelected,
       NoAction,
       wrongIds,
-      TimerMin,
       Result,
       Win,
     } = this.state
-    let {TimerSec, FlipCount, Score, lowestFlipCount} = this.state
+    let {TimerSec, FlipCount, Score, lowestFlipCount, TimerMin} = this.state
     if (TimerSec === 60) {
       TimerSec = `00`
     } else if (TimerSec < 10) {
       TimerSec = `0${TimerSec}`
+    }
+    if (TimerMin === 60) {
+      TimerMin = `00`
+    } else if (TimerMin < 10) {
+      TimerMin = `0${TimerMin}`
     }
     if (FlipCount < 10) {
       FlipCount = `0${FlipCount}`
@@ -425,16 +427,12 @@ class CardFlipGame extends Component {
         </div>
         <h1 className="CardFlipGameHeading">Card-Flip Memory Game</h1>
         <p className="CardFlipTimer">
-          <span>
-            0{TimerMin}:{TimerSec}
-          </span>
+          {TimerMin}:{TimerSec}
         </p>
         <div className="Containerone">
           <p className="CardLowestFlip">Lowest Flip Count-00</p>
           <p className="CardFlipTimerSmallDevices">
-            <span>
-              0{TimerMin}:{TimerSec}
-            </span>
+            {TimerMin}:{TimerSec}
           </p>
         </div>
         <div className="Containertwo">

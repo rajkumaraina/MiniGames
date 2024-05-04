@@ -1050,43 +1050,43 @@ class MatrixGame extends Component {
       LevelContainer = 'MMLevelMainContainer-level1'
     } else if (level === 2) {
       LEVELS = MMLEVEL2
-      progress = 20
+      progress = 10
       ListItemWidth = 'MMListItemBox-level2'
       UnorderedListBackground = 'MMUnorderedBox-level2'
       LevelContainer = 'MMLevelMainContainer-level2'
     } else if (level === 3) {
       LEVELS = MMLEVEL3
-      progress = 30
+      progress = 15
       ListItemWidth = 'MMListItemBox-level3'
       UnorderedListBackground = 'MMUnorderedBox-level3'
       LevelContainer = 'MMLevelMainContainer-level3'
     } else if (level === 4) {
       LEVELS = MMLEVEL4
-      progress = 40
+      progress = 20
       ListItemWidth = 'MMListItemBox-level4'
       UnorderedListBackground = 'MMUnorderedBox-level4'
       LevelContainer = 'MMLevelMainContainer-level4'
     } else if (level === 5) {
       LEVELS = MMLEVEL5
-      progress = 50
+      progress = 25
       ListItemWidth = 'MMListItemBox-level5'
       UnorderedListBackground = 'MMUnorderedBox-level5'
       LevelContainer = 'MMLevelMainContainer-level5'
     } else if (level === 6) {
       LEVELS = MMLEVEL6
-      progress = 60
+      progress = 35
       ListItemWidth = 'MMListItemBox-level6'
       UnorderedListBackground = 'MMUnorderedBox-level6'
       LevelContainer = 'MMLevelMainContainer-level6'
     } else if (level === 7) {
       LEVELS = MMLEVEL7
-      progress = 70
+      progress = 45
       ListItemWidth = 'MMListItemBox-level7'
       UnorderedListBackground = 'MMUnorderedBox-level7'
       LevelContainer = 'MMLevelMainContainer-level7'
     } else if (level === 8) {
       LEVELS = MMLEVEL8
-      progress = 80
+      progress = 55
       ListItemWidth = 'MMListItemBox-level8'
       UnorderedListBackground = 'MMUnorderedBox-level8'
       LevelContainer = 'MMLevelMainContainer-level8'
@@ -1098,7 +1098,7 @@ class MatrixGame extends Component {
       LevelContainer = 'MMLevelMainContainer-level9'
     } else if (level === 10) {
       LEVELS = MMLEVEL10
-      progress = 60
+      progress = 70
       ListItemWidth = 'MMListItemBox-level10'
       UnorderedListBackground = 'MMUnorderedBox-level10'
       LevelContainer = 'MMLevelMainContainer-level10'

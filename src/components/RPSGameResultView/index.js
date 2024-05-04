@@ -19,14 +19,14 @@ const RPSGameResultView = props => {
     choiceAlt = 'rock'
   } else if (selected.id === 'SCISSORS') {
     choiceAlt = 'scissor'
-  } else {
+  } else if (selected.id === 'PAPER') {
     choiceAlt = 'paper'
   }
   if (random.id === 'ROCK') {
     randomAlt = 'rock'
   } else if (random.id === 'SCISSORS') {
     randomAlt = 'scissor'
-  } else {
+  } else if (random.id === 'PAPER') {
     randomAlt = 'paper'
   }
   return (

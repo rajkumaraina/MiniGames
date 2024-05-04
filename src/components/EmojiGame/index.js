@@ -2,8 +2,6 @@ import {Component} from 'react'
 
 import {BiArrowBack} from 'react-icons/bi'
 
-import {CgClose} from 'react-icons/cg'
-
 import {WinNavbarItem, LooseNavbarItem} from '../EmojiNavBar'
 
 import {Win, Loose} from '../EmojiResultCard'
@@ -238,12 +236,12 @@ class EmojiGame extends Component {
               <h1 className="InitialRulesHeading">Rules</h1>
               <ul className="emojigameUnorderedList">
                 <li className="InitialrulesListItem">
-                  User should able to see the lists of Emojis
+                  User should be able to see the list of Emojis
                 </li>
                 <li className="InitialrulesListItem">
-                  When the user clicks any of the Emoji for the first time, then
-                  the count of the score should be incremented by 1 and the List
-                  of emoji cards should be shuffled.
+                  When the user clicks any one of the Emoji for the first time,
+                  then the count of the score should be incremented by 1 and the
+                  List of emoji cards should be shuffled.
                 </li>
                 <li className="InitialrulesListItem">
                   This process should be repeated every time the user clicks on

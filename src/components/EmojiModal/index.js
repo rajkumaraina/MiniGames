@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Modal from 'react-modal'
 import {CgClose} from 'react-icons/cg'
 
@@ -27,15 +27,14 @@ const EmojiRulesPopUp = () => {
         className="modal-content"
         overlayClassName="modal-overlay"
       >
-        {' '}
-        <CgClose />
         <button
           type="button"
           data-testid="close"
           className="emoji-cross-icon"
           onClick={closeModal}
         >
-          <CgClose />
+          {' '}
+          <CgClose className="BackIcon" />
         </button>
         <h1 className="emoji-rules-heading-popup">Rules</h1>
         <ul className="emoji-rules-list-popup">
